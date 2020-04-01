@@ -12,3 +12,36 @@
 * Function\(\) 생성자를 사용할 때는 new 키워드가 있으나 없으나 결과가 같음.
 * Function\(\) 생성자를 직접 호출하면 클로저가 생기지 않음.
 
+### Function\(\) 속성과 메소드
+
+#### 속성\(예: Function.prototype;\)
+
+* prototype
+
+### Function\(\) 객체의 인스턴스 속성과 메소드
+
+#### 인스턴스 속성\(예: var myFunction - function\(x, y, x\) {}; myFunction.length;\)
+
+* arguments
+* constructor
+* length
+
+#### 인스턴스 메소드\(예: var myFunction = function\(x, y, z\) {}; myFunction.toString\(\);\)
+
+* apply\(\)
+* call\(\)
+* toString\(\)
+
+### 함수는 항상 값을 반환한다
+
+* 함수 내부에서 반환할 값을 설정하지 않으면 undefined가 반환됨. 모든 함수는 항상 값을 반환함. 심지어 명시적으로 값을 반환하는 코드가 없을 때도 반환함. 명시적으로 반환값을 설정하지 않았을 때는 항상 undefined가 반환됨.
+
+```javascript
+var yelp = function() {
+    console.log('I am yelping!');
+}
+
+// 함수는 우리가 명시적으로 값을 반환하지 않는 경우에도 항상 값을 반환하기 때문에 여기서는 true가 기록됨.
+console.log(yelp === undefined);
+```
+
