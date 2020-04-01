@@ -19,4 +19,5 @@
   * [자바스크립트 객체](undefined-1/undefined/untitled.md)
   * [객체와 속성 다루기](undefined-1/undefined/undefined.md)
   * [Object\(\)](undefined-1/undefined/object.md)
+  * [Function\(\)](undefined-1/undefined/function.md)
 
