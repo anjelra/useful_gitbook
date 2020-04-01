@@ -65,7 +65,18 @@ var cody = {
 console.log(cody);    // cody 객체와 속성을 기록함.
 ```
 
+### 모든 객체는 Object.prototype을 상속받는다.
 
+* object\(\) 생성자 함수의 prototype 속성은 프로토타입 체인의 가장 끝에 있음. 아래의 코드를 보자.
 
+```javascript
+Object.prototype.foo = 'foo';
 
+var myString = 'bar';
+
+// 'foo'가 기록. 이 값은 프로토타입 체인을 통해 Object.prototype.foo에서 가져옴.
+console.log(myString.foo);
+```
+
+* 위의 코드에서 보면 Object.prototype에 foo 속성을 추가한 후 문자열을 하나 만들고 문자열 인스턴스의 foo 속성에 접근했음. myString 인스턴스에는 foo 속성이 없으므로 프로토타입 체인의 효과가 나타나 String.prototype에서 foo 속성을 찾음. 여기에도 없으므로 그 다음으로는 Object.prototype에서 찾음. object.prototype은 자바스크립트가 객체의 속성을 찾을 때 마지막으로 확인하는 곳임. Object.prototype에 foo라는 값을 추가했으므로 Object.prototyp에는 foo 속성이 있을 테고 이 속성은 "foo"를 반환함.
 
