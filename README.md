@@ -1,1 +1,4 @@
-# useful_gitbook
+# Initial page
+
+유용한 사이트들과 프론트엔드 개발자가 반드시 알아야 할 것들을 정리중.
+
