@@ -45,3 +45,42 @@ var yelp = function() {
 console.log(yelp === undefined);
 ```
 
+### 함수에 매개변수 전달하기
+
+```javascript
+var addFunction = function(number1, number2) {
+    var sum = number1 + number2;
+    return sum;
+};
+
+// 6이 기록됨.
+console.log(addFunction(3, 3);
+```
+
+### this와 arguments
+
+* 함수라면 무엇이든 스코프/몸체 내부에서 this와 arguments를 사용할 수 있음. arguments 객체는 함수로 전달된 매개변수를 저장하고 있는 배열 비슷한 객체임. 다음 코드에서 우리는 함수를 정의할 때 매개변수를 깜빡 잊고 설정하지 않았지만 arguments 배열을 사용해 함수에 전달된 매개변수에 접근할 수 있었음.
+
+```javascript
+var add = function() {
+    return arguments[0] + arguments[1];
+}
+
+console.log(add(4, 4));    // 8을 반환함.
+```
+
+* this 키워드는 함수를 포함하고 있는 객체에 대한 참조임. 알다시피 객체의 속성으로 포함된 함수\(즉, 메소드\)에서는 this를 사용해 "부모" 객체를 참조할 수 있음. 함수를 전역 스코프에서 정의했으면 this의 값은 전역 스코프 객체\(웹 브라우저의 window\)가 됨. 아래 코드를 살펴보고 this가 무엇일지 확인해 보자.
+
+```javascript
+var myObject1 = {
+    name: 'myObject1',
+    myMethod: function() {console.log(this);}
+};
+
+myobject1.myMethod();    // 'myObject1'이 기록됨.
+
+var myObject2 = function() {console.log(this)};
+
+myObject2();    // window가 기록됨.
+```
+
