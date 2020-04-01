@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Initial page](README.md)
+* [시작 페이지](README.md)
 * [git](git.md)
 * [정규표현식](undefined.md)
 * [webpack](webpack.md)
