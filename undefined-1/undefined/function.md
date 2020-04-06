@@ -84,3 +84,82 @@ var myObject2 = function() {console.log(this)};
 myObject2();    // window가 기록됨.
 ```
 
+### arguments.callee 속성
+
+* arguments 객체에는 callee라는 속성이 있음. 이 속성은 현재 실행 중인 함수의 참조인데, 함수 스코프에서 실행 중인 함수를 참조할 때 사용되는\(예: arguments.callee\), 말하자면 자기 참조 속성임. 다음은 arguments.callee 속성을 사용해 호출한 함수의 참조를 얻는 코드임.
+
+```javascript
+var foo = function foo() {
+    console.log(arguments.callee);    // foo()가 호출됨.
+}
+```
+
+### 함수 인스턴스의 length 속성과 arguments.length
+
+* arguments 객체에는 고유한 length 속성이 포함되어 있음. 속성 이름만 봤을 때는 함수 선언 시 정의된 인수의 개수를 알려줄 꺼 같지만, 사실 length 속성은 함수를 실행할 때 실제로 함수에 전달된 매개변수의 개수를 저장하고 있음.
+
+```javascript
+var myFunction = function(z, s, d) {
+    return arguments.length;
+}
+
+console.log(myFunction());    // 함수에 전달된 매개변수가 없으므로 0이 기록됨.
+```
+
+* Function\(\) 인스턴스는 모두 length 속성을 포함하고 있음. 이 속성을 사용하면 함수선언 시 정의된 매개변수의 개수를 알 수 있음.
+
+```javascript
+var myFunction = function(z, s, d, e, r, m, q) {
+    return myFunction.length;
+}
+
+console.log(myFunction());    // 7이 기록됨.
+```
+
+### 함수 매개변수 재정의
+
+* 함수의 매개변수는 함수 내부에서 바로 혹은 arguments 배열을 사용해 재정의될 수 있음.
+
+```javascript
+var foo = false;
+var bar = false;
+
+var myFunction = function(foo, bar) {
+    arguments[0] = true;
+    bar = true;
+    console.log(arguments[0], bar);    // true, true가 기록됨.
+}
+
+myFunction();
+```
+
+### 함수 완료 전에 반환하기\(실행 종료\)
+
+* return 키워드를 사용하면 함수 실행 중 언제라도 동작을 취소할 수 있음. 이 때 반환할 값을 설정하지 않아도 상관없음. 다음 코드에서 add 함수는 매새변수가 정의되지 않았거나 숫자가 아니면 동작을 취소해 버림.
+
+```javascript
+var add = function(x, y) {
+    // 매개변수가 숫자가 아니면 에러를 반환한다.
+    if (typeof x !== 'number' || typeof y !== 'number') {
+        return '숫자를 전달하세요';
+    }
+    
+    return x + y;
+}
+
+console.log(add(3, 3));        // 6이 기록됨.
+console.log(add('2', '2'));    // '숫자를 전달하세요'가 기록됨.
+```
+
+**return 키워드를 사용하면 함수 실행 중 언제든 함수 실행을 취소할 수 있음.**
+
+
+
+### **함수를 정의하는 세 가지 방법**
+
+* 함수는 함수 생성자, 함수 선언문, 함수 표현식 세 가지의 다른 방식으로 정의할 수 있음. 다음 코드는 이 세 가지 방식을 사용해 함수를 정의함.
+
+```javascript
+
+```
+
