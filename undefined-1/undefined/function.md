@@ -54,7 +54,7 @@ var addFunction = function(number1, number2) {
 };
 
 // 6이 기록됨.
-console.log(addFunction(3, 3);
+console.log(addFunction(3, 3));
 ```
 
 ### this와 arguments
@@ -69,7 +69,7 @@ var add = function() {
 console.log(add(4, 4));    // 8을 반환함.
 ```
 
-* this 키워드는 함수를 포함하고 있는 객체에 대한 참조임. 알다시피 객체의 속성으로 포함된 함수\(즉, 메소드\)에서는 this를 사용해 "부모" 객체를 참조할 수 있음. 함수를 전역 스코프에서 정의했으면 this의 값은 전역 스코프 객체\(웹 브라우저의 window\)가 됨. 아래 코드를 살펴보고 this가 무엇일지 확인해 보자.
+* this 키워드는 함수를 포함하고 있는 객체에 대한 참조임. **알다시피 객체의 속성으로 포함된 함수\(즉, 메소드\)에서는 this를 사용해 "부모" 객체를 참조할 수 있음.** **함수를 전역 스코프에서 정의했으면 this의 값은 전역 스코프 객체\(웹 브라우저의 window\)가 됨.** 아래 코드를 살펴보고 this가 무엇일지 확인해 보자.
 
 ```javascript
 var myObject1 = {
