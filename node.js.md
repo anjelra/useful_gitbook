@@ -6,5 +6,7 @@
 
 {% embed url="https://stackabuse.com/executing-shell-commands-with-node-js/" %}
 
+{% embed url="http://magic.wickedmiso.com/143" %}
+
 
 
