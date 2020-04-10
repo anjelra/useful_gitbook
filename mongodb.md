@@ -6,7 +6,7 @@
 
 ### mongodb 설치하기
 
-{% embed url="https://inma.tistory.com/60" caption="export PATH=/Users/song-anjelra/team/mongodb/bin:$PATH" %}
+{% embed url="https://inma.tistory.com/60" caption="export PATH=/Users/song-anjelra/mongodb/bin:$PATH" %}
 
 
 
