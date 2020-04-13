@@ -32,12 +32,12 @@ description: terminal 창으로 연습해보기
 
 * git status\(깃 상태 확인하면 현재 작업중인 파일 목록이 나옴\)
 
-![](.gitbook/assets/image%20%2810%29.png)
+![](.gitbook/assets/image%20%2811%29.png)
 
 * git add . \(전체 파일을 add 함\) -&gt; add를 무조건 해야 stash를 할 수 있음.
 * git status \( 깃 상태 다시 확인\) -&gt; 파일이 add 된 걸 알 수 있음.
 
-![](.gitbook/assets/image%20%288%29.png)
+![](.gitbook/assets/image%20%289%29.png)
 
 * git stash save '원하는 stash 이름' -&gt; 이제 stash 가 되었음. \(ex: ㅋㅋㅋ\)
 
