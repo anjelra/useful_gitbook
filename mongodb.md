@@ -18,5 +18,9 @@
 
 ![](.gitbook/assets/image%20%287%29.png)
 
+### mongodb 기본 사용방법\(user 추가\)
+
+{% embed url="https://datamod.tistory.com/28" %}
+
 
 
