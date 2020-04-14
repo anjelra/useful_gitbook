@@ -112,5 +112,9 @@ db.createUser(
 
 {% embed url="https://www.zerocho.com/category/MongoDB/post/59a1870210b942001853e250" %}
 
+### mongodb의 권한이 설정되어 있다면?
 
+1. admin 으로 변경\(mongo -u root -p "1234"\)
+2. 사용하고자 하는 db로 변경\(use tasks\)
+3. 권한 추가 \( db.createUser\( {user: "anjelra", pwd: "samsung2!",  roles: \[{ role: "readWrite", db: "tasks"}\] } \) \)
 
