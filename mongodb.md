@@ -87,6 +87,13 @@ db.createUser(
 )
 ```
 
+### db user 삭제
+
+```text
+use tasks
+db.dropUser("anjelra");
+```
+
 ### db collection
 
 * show collections -&gt; 컬렉션 리스트 확인
@@ -117,4 +124,13 @@ db.createUser(
 1. admin 으로 변경\(mongo -u root -p "1234"\)
 2. 사용하고자 하는 db로 변경\(use tasks\)
 3. 권한 추가 \( db.createUser\( {user: "anjelra", pwd: "samsung2!",  roles: \[{ role: "readWrite", db: "tasks"}\] } \) \)
+4. command + C로 mongo 종료
+5. mongo 명령어 사용해서 mongodb로 진입\(mongo\)
+6. use tasks -&gt; tasks database 로 이동\(왜냐하면, api user는 다른 데이터베이스에는 권한이 없기 때문에\)
+7. 아직 사용자가 없음. 만약 admin으로 사용자를 입력해서 들어오게 되면, 사용자가 많다고 하면서 에러를 뱉으니 일단 mongo로만 진입한 다음, db.auth\("api", "itdnsdud"\); 로 사용자를 로그인.
+8. 그리고 collection을 만듦. -&gt; db.createCollection\("deploy"\)
+
+### 
+
+
 
