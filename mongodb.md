@@ -97,6 +97,7 @@ db.createUser(
 
 * db.컬렉션명.insert\(document\) -&gt; document 추가. 
 * db.컬렉션명.find\(\[query, projection\]\) -&gt; collection의 document list 조회.
+  * 전체 document list를 조회하고 싶으면, ex\) db.deploy.find\( {} \)
 * db.컬렉션명.find\(\[query, projection\]\).pretty\(\) -&gt; collection의 document list 조.\(json이 이쁘게 나옴\)
   * query : document 타입. Optional 이며, document를 조회할 때 기준을 정한다. 모든 document를 조회할 때는 이 매개변수를 비우거나, {}를 전달하면 됨.
   * projection: document 타입. Optional 이며, document를 조회할 때 보여질 field를 정함. 
