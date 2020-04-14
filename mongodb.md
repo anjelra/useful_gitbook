@@ -95,7 +95,7 @@ db.createUser(
 
 ### db document\(data 라고 생각하면 됨\)
 
-* db.컬렉션명.insert\(document\) -&gt; document 추
+* db.컬렉션명.insert\(document\) -&gt; document 추가. 
 * db.컬렉션명.find\(\[query, projection\]\) -&gt; collection의 document list 조회.
 * db.컬렉션명.find\(\[query, projection\]\).pretty\(\) -&gt; collection의 document list 조.\(json이 이쁘게 나옴\)
   * query : document 타입. Optional 이며, document를 조회할 때 기준을 정한다. 모든 document를 조회할 때는 이 매개변수를 비우거나, {}를 전달하면 됨.
