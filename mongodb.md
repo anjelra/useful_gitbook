@@ -59,3 +59,53 @@
 
 * db.getUsers\(\) 
 
+### db user 추가
+
+1. 관리자 생성
+
+```text
+use admin
+db.createUser(
+    {
+        user: "root",
+        pwd: "samsung2!",
+        roles: [ {role: "userAdminAnyDatabase", db: "admin"} ]
+    }
+)
+```
+
+2. 계정 생성
+
+```text
+use tasks
+db.createUser(
+    {
+        user: "tasks",
+        pwd: "itdnsdud",
+        roles: [ {role: "readWrite", db: "tasks"} ]
+    }
+)
+```
+
+### db collection
+
+* show collections -&gt; 컬렉션 리스트 확인
+* db.컬렉션명.drop\(\) -&gt; 해당 이름을 가진 컬렉션을 제거
+* db.OLD컬렉션명.renameCollection\("NEW컬렉션명"\) -&gt; 이름변
+
+### db document\(data 라고 생각하면 됨\)
+
+* db.컬렉션명.insert\(document\) -&gt; document 추
+* db.컬렉션명.find\(\[query, projection\]\) -&gt; collection의 document list 조회.
+* db.컬렉션명.find\(\[query, projection\]\).pretty\(\) -&gt; collection의 document list 조.\(json이 이쁘게 나옴\)
+  * query : document 타입. Optional 이며, document를 조회할 때 기준을 정한다. 모든 document를 조회할 때는 이 매개변수를 비우거나, {}를 전달하면 됨.
+  * projection: document 타입. Optional 이며, document를 조회할 때 보여질 field를 정함. 
+    * ex: db.articles.find\({ }, { "\_id": false, "title": true, "content": true }\)
+* db.컬렉션명.remove\(criteria\[, justOne\]\) -&gt; document 제거
+  * criteria: document 타입. 데이터의 기준 값으로서 일치하면 기본적으로 다 삭제함. 이 값이 { }이면 컬렉션의 모든 데이터를 제거함. 반드시 넣어야 함.
+  * justOne boolean타입. Optional 매개변수이며, 이 값이 true면 1개의 document만 제거함. 이 매개변수가 생략되면 기본값은 false이고 criteria에 해당되는 모든 document를 제거함.
+
+{% embed url="https://sjh836.tistory.com/100" %}
+
+
+
