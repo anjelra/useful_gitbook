@@ -134,6 +134,8 @@ db.dropUser("anjelra");
 
 {% embed url="https://pro-self-studier.tistory.com/59" %}
 
+{% embed url="https://minimilab.tistory.com/43" %}
+
 
 
 
