@@ -14,7 +14,7 @@
 
 #### 중요!!!!! 처음에 잘 안됐던 이유!! data/db 폴더를 생성하고, 서버가 구동되는 폴더 경로를 재 설정 한다.\(--dbpath 사용\)
 
-#### mongod --dbpath /Users/song-anjelra/database/data/db
+#### mongod --dbpath /Users/song-anjelra/database/data
 
 숨김파일 찾으려면 폴더로 이동을 보면 됨 -&gt; 단축키: command + shift + G 누르고나서 다 안쳐도 탭 누르면 자동완성됨.
 
