@@ -130,7 +130,11 @@ db.dropUser("anjelra");
 7. 아직 사용자가 없음. 만약 admin으로 사용자를 입력해서 들어오게 되면, 사용자가 많다고 하면서 에러를 뱉으니 일단 mongo로만 진입한 다음, db.auth\("api", "itdnsdud"\); 로 사용자를 로그인.
 8. 그리고 collection을 만듦. -&gt; db.createCollection\("deploy"\)
 
-### 
+### mongodb find \(select\)
+
+{% embed url="https://pro-self-studier.tistory.com/59" %}
+
+
 
 
 
