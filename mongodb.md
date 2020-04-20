@@ -114,7 +114,7 @@ db.dropUser("anjelra");
 * db.컬렉션명.remove\(criteria\[, justOne\]\) -&gt; document 제거
   * criteria: document 타입. 데이터의 기준 값으로서 일치하면 기본적으로 다 삭제함. 이 값이 { }이면 컬렉션의 모든 데이터를 제거함. 반드시 넣어야 함.
   * justOne boolean타입. Optional 매개변수이며, 이 값이 true면 1개의 document만 제거함. 이 매개변수가 생략되면 기본값은 false이고 criteria에 해당되는 모든 document를 제거함.
-* db.컬렉션명.count\(\) -&gt; document 갯
+* db.컬렉션명.count\(\) -&gt; document 갯수를 출력. 
 
 {% embed url="https://sjh836.tistory.com/100" %}
 
