@@ -13,6 +13,7 @@
 * [mysql](mysql.md)
 * [problem solving](problem-solving.md)
 * [mongodb](mongodb.md)
+* [Typescript](typescript.md)
 
 ## 읽은 책을 정리 <a id="undefined-1"></a>
 
