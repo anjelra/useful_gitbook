@@ -139,6 +139,10 @@ db.dropUser("anjelra");
 
 {% embed url="https://minimilab.tistory.com/43" %}
 
+### mongoose
+
+{% embed url="https://mongoosejs.com/docs/connections.html" %}
+
 
 
 
