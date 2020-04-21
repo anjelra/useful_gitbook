@@ -30,5 +30,9 @@ description: 봐야할 사이트 정리 및 잊지 말아야 할 것을 정리
 
 * arrow function을 쓰게 되면 this가 살아있어서 밖에서 접근했던 this를 따로 선언해주지 않아도 물고 들어가는 특징이 있음. 
 
+### es6 class 
+
+{% embed url="https://beomy.tistory.com/15" %}
+
 
 
