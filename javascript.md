@@ -26,7 +26,9 @@ description: 봐야할 사이트 정리 및 잊지 말아야 할 것을 정리
 
 {% embed url="https://brunch.co.kr/@kd4/87" %}
 
+### es6 arrow function의 가장 큰 특징
 
+* arrow function을 쓰게 되면 this가 살아있어서 밖에서 접근했던 this를 따로 선언해주지 않아도 물고 들어가는 특징이 있음. 
 
 
 
