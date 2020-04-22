@@ -34,5 +34,13 @@ description: 봐야할 사이트 정리 및 잊지 말아야 할 것을 정리
 
 {% embed url="https://beomy.tistory.com/15" %}
 
+### array를 Object로 변환
+
+* Obejct.entries\(\) 
+
+### Object를 array로 변환
+
+{% embed url="https://codingcoding.tistory.com/1244" %}
+
 
 
