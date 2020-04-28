@@ -160,6 +160,12 @@ console.log(add('2', '2'));    // '숫자를 전달하세요'가 기록됨.
 * 함수는 함수 생성자, 함수 선언문, 함수 표현식 세 가지의 다른 방식으로 정의할 수 있음. 다음 코드는 이 세 가지 방식을 사용해 함수를 정의함.
 
 ```javascript
+// 함수 생성자 : 마지막 매개변수는 함수의 로직(몸체 코드)부분이며, 그 외의 매개변수는 인수다.
+var addConstructor = new Function('x', 'y', 'return x + y');
 
+// 함수 선언문
+function addStatement(x, y) {
+    return x + y;
+}
 ```
 
