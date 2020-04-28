@@ -167,5 +167,186 @@ var addConstructor = new Function('x', 'y', 'return x + y');
 function addStatement(x, y) {
     return x + y;
 }
+
+// 함수 표현식
+var addExpression = function(x, y) {
+    return x + y;
+}
+```
+
+### 함수를 호출하는 네 가지 패턴
+
+* 함수로서
+* 메소드로서
+* 생성자로서
+* appply\(\) 혹은 call\(\)을 사용해서
+
+```javascript
+// 함수패턴
+var myCunction = function() {
+    return 'foo';
+}
+
+console.log(myFunction());    // 'foo'가 기록된다.
+
+// 메소드 패턴
+var myObject = {myFunction: function() {return 'bar';}};
+console.log(myObject.myFuncton());    // 'bar'가 기록된다.
+
+// 생성자 패턴
+var Cody = function() {
+    this.living = true;
+    this.age = true;
+    this.gender = 'male';
+    this.getGender = function() {
+        return this.gender;
+    }
+}
+
+var cody = new Cody();    // Cody 생성자를 통해 호출된다.
+console.log(cody);        // cody 객체와 속성이 기록된다.
+
+// apply() 와 call() 패턴
+var greet = {
+    runGreet: function() {
+        console.log(this.name, arguments[0], arguments[1]);
+    }
+};
+
+var cody = {name:'cody'};
+var lisa = {name:'lisa'};
+
+// runGreet 함수가 마치 cody 객체의 메소드인 것처럼 호출한.
+greet.runGreet.call(cody, 'foo', 'bar');    // cody foo bar 가 기록된다.
+greet.runGreet.apply(lisa, ['foo', 'bar']);    // lisa foo bar 가 기록된다.
+
+// call() 과 apply() 차이점은 호출할 함수에 매개변수를 전달하는 방식이다.
+```
+
+### 익명 함수
+
+```javascript
+function() {
+    console.log('hi');    // 익명함수지만 실행하진 않았다.
+}
+// 우리가 전달할 익명 함수를 실행할 함수를 만든다.
+var sayHi = function(f) {
+    f();
+}
+
+// 익명 함수를 매개변수로서 전달한다.
+sayi(function(){console.log('hi'});    // 'hi'가 기록된다.
+```
+
+### 자기 호출 표현식
+
+함수 표현식은 괄호 연산자를 사용하면 정의하자마자 곧장 실행할 수 있다. sayWord\(\) 와 같은 형식을 자기 호출 함수라 한다.
+
+```javascript
+var sayWord = function() {
+    console.log('Word 2 yo mo!');
+}();
+
+// 'Word 2 yo mo!' 가 기록된다.
+```
+
+### 자기 호출 익명 함수
+
+스스로 호출되는 익명 함수 선언문도 만들 수 있는데, 이를 가리켜 자기 호출 익명 함수라 한다. 다음은 여러 익명 함수를 만든 후 만들자마자 바로 함수를 호출하는 코드이다.
+
+```javascript
+// 실제로 가장 많이 사용되고 / 볼 수 있는 형태
+(function(msg) {
+    console.log(msg);
+})('Hi');
+
+// 살짝 다르지만 같은 역할을 하는 코드
+(function(msg) {
+    console.log(msg);
+}('Hi'));
+
+// 가장 코드를 적게 쓸 수 있는 방식
+!function sayHi() {console.log('hi');}();
+
+// 모두 'Hi'가 기록된다.
+```
+
+### 함수는 중첩될 수 있다
+
+함수를 다른 함수 안에 중첩해서 정의할 수 있으며 중첩 단계에 제한은 없다. 다음 코드에서 우리는 foo함수 안에 bar 함수를 만들고 그 안에 goo 함수를 정의했다.
+
+```javascript
+var foo = function() {
+    var bar = function() {
+        var goo = function() {
+            console.log(this);    // window 머리 객체의 참조가 기록된다.
+        }();
+    }();
+}();
+```
+
+### 함수에 함수 전달하기 / 함수에서 함수 반환하기
+
+함수에 함수를 전달할 수 있다. 함수를 인수로 받거나 반환하는 함수를 가리켜 "교차함수"라고 한다. 다음의 코드에서 우리는 foo 함수에 익명함수를 전달하였으며 foo 함수는 전달받은 익명함수를 즉시 반환한다. 반환된 익명함수는 bar 변수에 저장된다.
+
+```javascript
+// 함수에 함수를 전달하거나 함수에서 함수를 반환할 수 있다.
+var foo = function(f) {
+    return f;
+};
+
+var bar = foo(function() {console.log('Hi')});
+
+bar();    // 'Hi'가 기록된다.
+```
+
+따라서 bar를 호출하면 foo\(\) 함수에 전달된 익명 함수가 호출된다. 즉 foo\(\) 함수가 반환한 익명 함수 bar 변수에 참조된 것이다. 이를 통해 다른 값과 마찬가지로 함수도 함수에 전달할 수 있다는 것을 알 수 있다.
+
+### 함수가 정의되기 전에 함수를 호출하기\(함수 호이스팅\)
+
+함수는 실제로 함수가 정의되기 전에도 호출할 수 있다. 이러한 특성을 익혀두어서 잘 활용하거나 최소한 이런 동작을 만났을 때 이유 정도는 알고 있어야 한다. 다음 코드에서 sayYo\(\)와 sum\(\) 함수를 정의하기 전에 함수를 호출했다.
+
+```javascript
+// 예제 1
+var speak = function() {
+    sayYo();    // sayYo()는 아직 정의되지 않았지만 호출할 수 있다. 'yo'가 기록된다.
+    function sayYo() {
+        console.log('Yo');
+    }
+}();
+
+// 예제 2
+console.log(sum(2, 2));    // 아직 정의되지 않은 sum()을 호출한다. 
+function sum(x, y) {
+    return x + y;
+}
+```
+
+자바스크립트는 코드를 실행하기 전에 함수 선언문을 먼저 해석하고 먼저 실행 스택/컨텍스트에 추가한다. 그래서 어디서 코드를 실행하든 항상 함수가 정의된 듯 동작한다. 함수를 사용할 때는 이러한 특성에 주의를 기울여야 할 것이다.
+
+**"함수 표현식"으로 정의 함수는 호이스트 되지 않는다. "함수 선언문"만 호이스트 된다.** 
+
+```javascript
+addExpress(); 
+// 함수 표현식
+var addExpresss = function(x, y) { return x + y;}
+
+// 에러를 발생시킴!!!! 함수 표현식은 호이스트 되지 않기 때문에.
+
+```
+
+### 함수는 자신을 호출할 수 있다\(재귀 호출\)
+
+```javascript
+var countDownFrom = function countDownFrom(num) {
+    console.log(num);
+    num--;    // 매개변수의 값을 수정한다.
+    if (num < 0) {
+        return false;    // num < 0이면 재귀 호출을 하지 않는다.
+    }
+    countDownFrom(num);
+}
+
+countDownFrom(5);
 ```
 
