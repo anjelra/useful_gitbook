@@ -27,4 +27,5 @@
   * [머리/전역 객체](undefined-1/undefined/undefined-1.md)
   * [this 키워드](undefined-1/undefined/this.md)
   * [스코프와 클로저](undefined-1/undefined/undefined-2.md)
+  * [함수의 프로토타입](undefined-1/undefined/undefined-3.md)
 
