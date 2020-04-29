@@ -65,3 +65,66 @@ var foo = function() {
 console.log(doo);    // doo는 boo 함수 스코프 내에만 있으므로 에러가 발생하여 undefined가 기록된다.
 ```
 
+따라서 함수 내에서 변수를 선언할 때에는 항상 var를 사용해야 한다. 그렇지 않으면 스코프 때문에 혼란스러워지는 문제가 발생할 수 있다.
+
+### 스코프 체인\(문법적 스코프\)
+
+자바스크립트는 변수를 찾을 때 스코프의 계층 구조에 기반한 검색 체인을 거슬러 올라가며 추적한다.
+
+```javascript
+var sayHiText = 'howdy';
+
+var func1 = function() {
+    var func2 = function() {
+        console.log(sayHiText);
+    }();
+}();
+```
+
+func2 함수 스코프 내에 포함되어 있지 않은 sayHiText의 값을 어떻게 찾았을까?
+
+1. func2함수에서 sayHiText라는 변수를 찾는다.
+2. 없으면 func2의 부모 함수인 func1에서 다시 검색한다.
+3. func1 스코프에서도 sayHiText를 찾지 못하면 func1 함수는 부모 함수가 없으므로 전역 스코프에서 sayHiText를 검색하고, sayHiText를 발견하면 이 값을 func2로 전달한다.
+4. 만약, sayHiText가 전역 스코프에도 정의되어 있지 않았다면 자바스크립트는 undefined를 반환했을 것이다.
+
+```javascript
+var x = 10;
+var foo = function() {
+    var y = 20;
+    var bar = function() {
+        var z = 30;
+        console.log(z + y + x);
+    }();
+}();
+
+foo();    // 60이 기록된다.
+```
+
+**스코프 체인은 프로토타입 체인과 크게 다르지 않다. 두 방법 모두 시스템적 계층적인 위치를 검색하여 원하는 값을 구한다.**
+
+### **스코프 체인을 검색할 때는 가장 처음 발견한 값을 반환한다.**
+
+```javascript
+var x = false;
+var foo = function() {
+    var x = false;
+    bar = function() {
+        var x = true;
+        console.log(x);
+    }();
+};
+
+foo();    // true가 기록된다.
+```
+
+**변수를 검색할 때는 스코프 체임에서 가장 가까운 스코프부터 검색하며, 값을 찾으면 상위 스코프에 같은 이름의 값이 있더라도 찾은 값을 반환하고 검색을 종료한다.**
+
+### **스코프는 함수를 정의할 때 결정된다**
+
+스코프 체인은 함수를 실행한 위치가 아닌 정의한 위치에 의해 결정된다. 이를 가리켜 문법적 스코핑\(lexical scoping\)이라고도 한다. 
+
+스코프 체인은 함수를 호출하기 전에 이미 만들어지며, 이 덕에 클로저\(closure\)를 만들 수 있다. 예를 들어, 다른 함수 내부에 정의되어 있다가 전역 스코프로 반환된 함수가 있다고 가정해 볼 때, 반환된 함수는 전역 스코프에 있더라도 스코프 체인을 통해 부모 함수에 여전히 접근할 수 있다.
+
+**아래의 코드를 보면, 우리는 익명 함수를 반환하는 parentFunction이라는 함수를 정의한 후 전역 스코프에서 이 함수를 호출할 것이다. 반환된 익명 함수는 parentFunction 내부에서 정의되었기 떄문에 실행될 때 parentFunction의 스코프에 접근할 수 있다. 이를 가리켜 클로저라 부른다.**
+
