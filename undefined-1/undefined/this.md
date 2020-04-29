@@ -140,5 +140,15 @@ console.log(cody.name);
 console.log(window.name);    // 'Cody Lindley'가 기록된다.
 ```
 
+### 프로타입 메소드 안의 this는 생성자 인스턴스를 참조한다
 
+생성자의 prototype 속성에 추가한 함수를 사용할 때 this는 메소드를 실행한 인스턴스를 참조한다. 
+
+```javascript
+var Person = function(x) {
+    if (x) {
+        this.fullName = x;
+    }
+}
+```
 
