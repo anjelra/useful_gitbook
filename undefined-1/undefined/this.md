@@ -150,5 +150,27 @@ var Person = function(x) {
         this.fullName = x;
     }
 }
+
+Person.prototype.whatIsMyFullname = function() {
+    return this.fullName;    // this 는 Person() 을 통해 만들어진 인스턴스를 참조한다.
+}
+
+var cody = new Person('cody lindley');
+var lisa = new Person('lisa lindley');
+
+// 상속한 whatIsMyFullname 메소드를 호출한다. 이 메소드 안의 this는 해당 인스턴스를 참조할 것이다.
+// 생성자함수: Person, 인스턴스: cody, lisa(생성자 함수를 이용해 만들어진 객체를 인스턴스라고 한다.)
+console.log(cody.whatIsMyFullname(), lisa.whatIsMyFullname());
+
+// 프로토타입 체인도 여전히 적용된다. 따라서 인스턴스가 fullName 속성을 포함하고 있지 않으면 프로토타입 체인에서 이 속성을 갖는다.
+// 다음에서 우리는 fullName 속성을 Person prototype과 Object.prototype 양쪽에 추가했다.
+
+Object.prototype.fullName = 'John Doe';
+var john = new Person();    // 전달된 인수가 없으므로 인스턴스에는 fullName 속성이 설정되지 않는다.
+
+console.log(john.whatIsMyFullname());    // 'John Doe' 가 기록된다.
+
 ```
+
+this 키워드는 prototype 객체에 포함된 메소드 내에서 인스턴스를 참조할 때 사용한다. 찾는 속성이 인스턴스에 없으면 프로토타입 체인을 검색한다.
 
