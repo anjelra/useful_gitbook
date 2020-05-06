@@ -112,5 +112,77 @@ console.log(myArray[50]['color']);    // 'blue'가 기록된다.
 console.log(myArray[50].color);        // 'blue'가 기록된다.
 ```
 
+### 크기와 색인
+
+배열은 0부터 색인을 시작한다. 
+
+```javascript
+var myArray = ['blue'];
+console.log(myArray[0]);    // 'blue'가 기록된다.
+console.log(myArray.length); // 1이 기록된다.
+```
+
+### 미리 설정한 크기로 배열 만들기
+
+```javascript
+var myArray = new Array(3);
+console.log(myArray.length);    // 3이 기록된다.
+console.log(myArray[0]);        // undefined가 기록된다.
+
+// 그러면 한 개의 숫자값만 포함하는 배열은 어떻게 만들 수 있을까?
+var myArray = [4];    // 리터럴 형식을 사용하면 된다.
+```
+
+### 배열의 크기를 설정하면 값을 추가하거나 제거할 수 있다
+
+```javascript
+var myArray = ['blue', 'green', 'orange', 'red'];
+console.log(myArray.length);    // 4가 기록된다.
+
+myArray.length = 99;
+console.log(myArray.length);    // 99가 기록된다.
+
+myArray.length = 1;
+console.log(myArray[1]);    // undefined가 기록된다.
+
+console.log(myArray);    // ["blue"]가 기록된다.
+```
+
+### 다른 배열을 포함한 배열\(다중 배열\)
+
+배열 안에 다른 배열이 포함된 경우를 가리켜 다중 배열이라고 부른다. 다중 배열에 접근하려면 각괄호를 연이어 사용하면 된다.
+
+```javascript
+var myArray = [[[['4번째 배열']]]];
+console.log(myArray[0][0][0][0]);    // '4번째 배열'이 기록된다.
+```
+
+### 배열을 앞뒤로 훑
+
+배열을 훑을 수 있는 가장 간단한 방법은 while 반복문을 사용하는 것이다.
+
+```javascript
+var myArray = ['blue', 'green', 'orange', 'red'];
+
+var myArrayLength = myArray.length;    // 배열의 크기를 저장해 불필요한 탐색을 방지한다.
+var counter = 0;
+
+while (counter < myArrayLength) {
+    console.log(myArray[counter]); // 순서대로 기록된다.
+    
+    counter++;
+}
+```
+
+```javascript
+var myArray = ['blue', 'green', 'orange', 'red'];
+
+var myArrayLength = myArray.length;    // 배열의 크기를 저장해 불필요한 탐색을 방지한다.
+
+while (myArrayLength--) {
+    console.log(myArray[myArrayLength]);
+}
+```
+
 
 
