@@ -121,3 +121,99 @@ console.log(FooInstance.constructor === Foo);    // true가 기록된다.
 console.log(FooInstance.constructor);            // Foo()가 기록된다.
 ```
 
+### 프로토타입에서 상속한 속성은 가장 최근의 값을 사용한다
+
+인스턴스가 프로토타입에서 상속한 속성은 그 속성이 어떻게 만들어지고, 변경되고, 추가되었든 상관없이 항상 가장 최근의 값을 사용한다.
+
+```javascript
+var Foo = function Foo(){};
+
+Foo.prototype.x = 1;
+
+var FooInstance = new Foo();
+console.log(FooInstance.x);    // 1이 기록된다.
+
+Foo.prototype.x = 2;
+
+console.log(FooInstance.x);    // 2가 기록된다. FooInstance도 갱신된다.
+```
+
+### prototype 속성을 새 객체로 대체하면 이전에 만든 인스턴스는 갱신되지 않는다
+
+지금까지 배운 사실을 보면 아마도 prototype 속성을 언제든 완전히 대체할 수 있고 그렇게 하면 모든 인스턴스가 갱신될 것이라 생각할 수 있다. 안타깝게도 이는 틀린 말이다. 인스턴스를 만들면 인스턴스를 만들 때의 prototype과 인스턴스가 서로 묶여버리기 때문에 prototype 속성에 새 객체를 설정하면 이미 만들어진 인스턴스와 새로운 prototype  간의 연결이 끊어져 버린다.
+
+```javascript
+var Foo = function Foo(){};
+
+Foo.prototype.x = 1;
+
+var FooInstance = new Foo();
+
+console.log(FooInstance.x);    // 짐작한 대로 1이 기록된다.
+
+// prototype 객체를 새로 만든 Object() 객체로 대체/재정의해 보자.
+Foo.prototype = {x:2};
+
+console.log(FooInstance.x);    // 1이 기록된다!!! 왜냐하면 FooInstance는 여전히 인스턴스로 만들어지던 시점의 prototype을 참조하고 있다.
+
+//Foo()의 인스턴스를 새로 만든다.
+var NewFooInstance = new Foo();
+
+// 새로 만든 인스턴스는 새로운 prototype 객체(={x:2};)와 묶여있다.
+console.log(NewFooInstance.x);    // 2가 기록된다.
+```
+
+**여기서 알 수 있는 사실은 인스턴스를 만든 뒤에는 객체의 prototype 속성을 새 객체로 대체하면 안된다는 것이다.** 만약 새 객체로 대체해버리면 같은 생성자에서 만든 인스턴스라해도 서로 다른 prototype을 참조하게 될 것이다.
+
+### 사용자 정의 생성자도 네이티브 생성자처럼 프로토타입을 상속할 수 있다
+
+```javascript
+var Person = function() {};
+
+// 모든 Person 인스턴스는 legs, arms, countLimbs 속성을 상속한다.
+Person.prototype.legs = 2;
+Person.prototype.arms = 2;
+Person.prototype.countLimbs = function() {return this.legs + this.arms;};
+
+var chunk = new Person();
+
+console.log(chunk.countLimbs());    // 4가 기록된다.
+```
+
+```javascript
+var Person = function(legs, arms) {
+    // 프로토타입에서 상속받은 값을 가린다.
+    if (legs !== undefined)    {this.legs = legs;}
+    if (arms !== undefined)    {this.arms = arms;}
+};
+
+Person.prototype.legs = 2;
+Person.prototype.arms = 2;
+Person.prototype.countLimbs = function() {return this.legs + this.arms;};
+
+var chunk = new Person(0, 0);
+
+console.log(chunk.countLimbs());    // 0이 기록된다.
+
+var chunkNoParam = new Person();
+
+console.log(chunkNoParam.countLimbs());    // 4가 기록된다.
+```
+
+### 상속 체인 만들기
+
+프로토타입 상속은 전통적인 객체 지향 프로그래밍 언어에서 볼 수 있던 상속 패턴을 흉내내기 위해 만들어졌다. 자바스크립트에서 인스턴스란 간단히 말해 다른 객체의 속성에 접근할 수 있는 객체다. 이를 위해 먼저 상속받고자 하는 부모 객체의 인스턴스를 만든 후 생성자의 prototype에 할당하면 부모 객체를 상속받을 수 있다. prototype 속성에 부모 객체의 인스턴스를 할당하고 나면 부모 객체 생성자의 prototype과 상속받는 객체 사이에는 연결\(즉, \_\_proto\_\_\)이 생긴다.
+
+```javascript
+var Person = function() {this.bar = 'bar'};
+Person.prototype.foo = 'foo';
+
+var Chef = function() {this.goo = 'goo'};
+Chef.prototype = new Person();
+var cody = new Chef();
+
+console.log(cody.foo);    // 'foo'가 기록된다.
+console.log(cody.goo);    // 'goo'가 기록된다.
+console.log(cody.bar);    // 'bar'가 기록된다.
+```
+
