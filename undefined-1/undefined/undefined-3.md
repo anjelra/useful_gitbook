@@ -57,3 +57,5 @@ var myArray = new Array();
 console.log(myArray.__proto__.foo);    // myArray.__proto__ = Array.prototype 이므로 foo가 기록된다.
 ```
 
+
+
