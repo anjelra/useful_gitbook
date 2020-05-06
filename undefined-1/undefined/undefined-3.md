@@ -57,5 +57,67 @@ var myArray = new Array();
 console.log(myArray.__proto__.foo);    // myArray.__proto__ = Array.prototype 이므로 foo가 기록된다.
 ```
 
+### 프로토타입 체인의 끝은 Object.prototype 이다
 
+prototype 속성은 객체이기 때문에 프로토타입 체인 또는 프로토타입 검색의 종점은 Object.prototype이다. 
+
+```javascript
+var myArray = [];
+
+console.log(myArray.foo);    // undefined가 기록된다.
+
+// myArray.foo, Array.prototype.foo, Object.prototype.foo에서 foo를 찾지 못했으므로
+// foo는 undefined가 된다.
+```
+
+### 프로토타입 체인은 체인에서 제일 먼저 찾은 속성을 반환한다
+
+**스코프 체인과 마찬가지로 프로토타입 체인은 체인을 검색하다가 가장 먼저 발견한 값을 사용한다.**
+
+```javascript
+Object.prototype.foo = 'object-foo';
+Array.prototype.foo = 'array-foo';
+var myArray = [];
+
+console.log(myArray.foo);    // Array.prototype.foo에서 찾은 'array-foo'가 기록된다.
+
+myArray.foo = 'bar';
+console.log(myArray.foo);    // myArray.foo에서 찾은 'bar'가 기록된다.
+```
+
+### prototype 속성을 새 객체로 대체하면 기본 constructor 속성이 삭제된다
+
+prototype 속성의 기본값은 다른 값으로 대체할 수 있다. 하지만 prototype 속성을 바꾸면 원래의 prototype 객체에서 볼 수 있었던 기본 constructor 속성도 사라진다.
+
+```javascript
+var Foo = function Foo() {};
+
+Foo.prototype = {};    // 빈 객체로 prototype 속성을 대체한다.
+
+var FooInstance = new Foo();
+
+console.log(FooInstance.constructor === Foo);    // false가 기록된다. 참조가 망가졌다.
+console.log(FooInstance.constructor);    // Foo()가 아닌 Object()가 기록된다.
+
+// prototype 값을 대체하지 않은 경우와 비교해 보자.
+var Bar = function Bar(){};
+
+var BarInstance = new Bar();
+
+console.log(BarInstance.constructor === Bar);   // true가 기록된다.
+console.log(BarInstance.constructor);           // Bar()가 기록된다.
+```
+
+만약 자바스크립트가 설정한 기본 prototype 속성을 대체할 생각이라면\(자바스크립트 객체지향 패턴에서 종종 사용되는 방식\), 생성자 함수를 참조하는 constructor 속성을 원래대로 복원해줘야 한다.
+
+```javascript
+var Foo = function Foo(){};
+
+Foo.prototype = {constructor: Foo};
+
+var FooInstance = new Foo();
+
+console.log(FooInstance.constructor === Foo);    // true가 기록된다.
+console.log(FooInstance.constructor);            // Foo()가 기록된다.
+```
 
