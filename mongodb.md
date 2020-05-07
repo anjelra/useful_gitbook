@@ -117,6 +117,11 @@ db.dropUser("anjelra");
 * db.컬렉션명.deleteOne\({ name: 'anjelra'}\) -&gt; name이 anjelra이 한 개의 데이터를 지.
 * db.컬렉션명.deleteMany\({name:'anjelra'}\) -&gt; name이 anjelra인 모든 도큐멘트를 지.
 * db.컬렉션명.count\(\) -&gt; document 갯수를 출력. 
+* db.컬렉션명.update\(
+
+  {"makeDataDate": "2020/04/16 10:07:13"},{$set: {"makeDataDate": "2020/04/16 10:07:13", "diffItem" : \[ { "filePath" : "/ria/common/resource/ModuleCar.js", "lastModified" : "Tue, 14 Apr 2020 01:41:04 GMT", "status" : "modified", "version" : { "modified" : "2020-04-14 10:31:18", "deploy" : "2020-04-14 10:31:26", "hash" : "c8ec4134d305dfac37b71daab4002eb75e595bc7W" } } \] } }
+
+\)  -&gt; 변경할 도큐먼트, 변경할 값을 넣으면 해당 document가 변경됨.
 
 {% embed url="https://sjh836.tistory.com/100" %}
 
