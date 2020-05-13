@@ -31,4 +31,5 @@
   * [Array\(\)](undefined-1/undefined/array.md)
   * [String\(\)](undefined-1/undefined/string.md)
   * [Number\(\)](undefined-1/undefined/number.md)
+  * [Boolean\(\)](undefined-1/undefined/boolean.md)
 
