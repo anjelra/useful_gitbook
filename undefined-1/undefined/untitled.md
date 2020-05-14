@@ -46,7 +46,7 @@ myObject['2'] = 'o';
 
 console.log(myObject);    // Object {0="f", 1="o", 2="o"}가 기록됨.
 
-var myString = new String('foo);    // String() 객체 만들기
+var myString = new String('foo');    // String() 객체 만들기
 console.log(myString);    // foo {0="f", 1="o", 2="o"}가 기록됨.
 
 // 보통 문자열은 원시값으로 사용되기 때문에 (ex: var myString = 'foo';) 객체 형태로 보이는게 
