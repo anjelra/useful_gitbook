@@ -1,5 +1,9 @@
 # html, css
 
+{% embed url="http://webberstudy.com/html-css/html-2/doctype/" %}
+
+
+
 {% embed url="https://offbyone.tistory.com/110" %}
 
 {% embed url="https://mygumi.tistory.com/52" %}
