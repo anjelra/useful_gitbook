@@ -9,10 +9,11 @@ description: terminal 창으로 연습해보기
 1. git hub에 create new repository 를 클릭해서 원하는 이름으로 만듦 
 2. git init
 3. git status\(상태 확인\) 
-4. remote 할 주소 체크
-5. git remote add github\(alias\) https://github.com/anjelra/lunchtoday.git\(주소\)
-6. git commit -m 'init'
-7. git push github\(alias\) master
+4. git add README.md
+5. remote 할 주소 체크
+6. git commit -m'init'
+7. git remote add origin\(alias\) https://github.com/anjelra/lunchtoday.git\(주소\)
+8. git push -u origin\(alias\) master
 
 {% embed url="https://zeddios.tistory.com/4" %}
 
