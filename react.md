@@ -21,5 +21,11 @@
 
 ![](.gitbook/assets/image%20%2819%29.png)
 
+### create-react-app build \(배포\)
 
+1. npm run build \(build  라는 폴더가 생김\)
+2. npm install -g serve \(serve라는 명령어를 이용해서 어디서든지 server를 셋팅할 수 있게 설정\)
+3. serve -s build \(build폴더안에 있는 파일을 document root로 하겠다 라는 뜻\(-s\)\)
+
+![](.gitbook/assets/image%20%2820%29.png)
 
