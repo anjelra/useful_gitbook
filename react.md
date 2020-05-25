@@ -29,5 +29,82 @@
 
 ![](.gitbook/assets/image%20%2820%29.png)
 
-### component 만드는 법 
+### react 기본 구조\(아무리 복잡해져도 이 부분은 변하지 않는다\)
+
+1. react의 시작 파일은 public/index.html 파일\( js 동일\)
+   1. index.html 파일안에 보면 &lt;div id="root"&gt;&lt;/div&gt; 가 있는데, 이 안에 데이터를 넣음.
+   2. index.js에 들어가보면 하단과 같이 &lt;App /&gt; 이 부분이 import 한 App 을 의미함.
+
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
+
+// <App /> 은 사용자 component.
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+```
+
+3. ./App 파일에 들어가보면 하단과 같이 component를 만들고 하나의 App class안에 넣은 후 export 시키는 방식으로 되어있음.
+
+```jsx
+class Subject extends Component {
+  // 자바스크립트 최신 스펙.. class 안에 선언된 function은 function 생략. 따라서 render()는 함수임.
+  // 주의!!!! component를 만들 때는 반드시 하나의 최상위 태그로 시작해야함.
+  // 여기서는 header가 최상위 태그임..
+  render() {
+    return (
+      <header>
+            <h1>WEB</h1>
+            world wide web!
+        </header>
+    );
+  }
+}
+
+// table of content(TOC) -> 목차
+class TOC extends Component {
+  render() {
+    return (
+      <nav>
+          <ul>
+              <li><a href="1.html">HTML</a></li>
+              <li><a href="2.html">CSS</a></li>
+              <li><a href="3.html">Javascript</a></li>
+          </ul>
+      </nav>
+    );
+  }
+}
+
+class Content extends Component {
+  render() {
+    return (
+      <article>
+        <h2>HTML</h2>
+        HTML is HyperText Markup Language.
+      </article>
+    );
+  }
+}
+
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <Subject></Subject>
+        <TOC></TOC>
+        <Content></Content>
+      </div>
+    );
+  };
+}
+export default App;
+```
 
