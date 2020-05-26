@@ -149,6 +149,14 @@ export default TOC;
 
 ### props와 state\(철저하게 분리되어 있어야 함\)
 
-* props : 사용자에게 중요한 정보\(컴포넌트를 외부에서 조작\)
+* props : 사용자에게 중요한 정보\(component를 외부에서 조작\)
 * state : 내부적으로 상태를 관리할 때 사용하는 정보
+
+### state
+
+상위 component인 App의 상태를 하위 component로 전달하고 싶을 때는 상위 component의 state값을 하위 component의 props 로 전달하는 것은 얼마든지 가능하다.
+
+### Each child in a list should have a unique "key" prop.
+
+**자동으로 리스트를 생성해줄 때에는 key 라는 prop 을 만들어줘야 한다. 이거는 우리가 사용하기 위해서라기 보다는 리엑트 자체에서 필요해서 구현해달라고 요청하는 것이기 때문에 그냥 unique한 값을 넣어주면 된다.**
 
