@@ -108,3 +108,42 @@ class App extends Component {
 export default App;
 ```
 
+### react component 쪼개기
+
+![](.gitbook/assets/image%20%2821%29.png)
+
+####  App.js 구성
+
+```jsx
+import React, { Component } from 'react';
+import './App.css';
+import TOC from './components/TOC';
+import Content from './components/Content';
+import Subject from './components/Subject';
+```
+
+#### 예를 들어, component TOC.js 파일을 살펴보기\(이런식으로 쓰면 재사용이 용이하며 소스도 간결해짐\)
+
+```jsx
+// React 라는 라이브러리에서 Component 라는 클래스를 로딩한다는 뜻
+import React, { Component } from 'react';
+
+// table of content(TOC) -> 목차
+class TOC extends Component {
+    render() {
+      return (
+        <nav>
+            <ul>
+                <li><a href="1.html">HTML</a></li>
+                <li><a href="2.html">CSS</a></li>
+                <li><a href="3.html">Javascript</a></li>
+            </ul>
+        </nav>
+      );
+    }
+}
+
+// TOC라는 js 를 가져다 쓰는 쪽에서 이 코드로 인해 TOC 라는 클래스를 가져갈수 있게 됨.
+export default TOC;
+```
+
