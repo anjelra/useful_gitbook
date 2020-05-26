@@ -147,3 +147,8 @@ class TOC extends Component {
 export default TOC;
 ```
 
+### props와 state\(철저하게 분리되어 있어야 함\)
+
+* props : 사용자에게 중요한 정보\(컴포넌트를 외부에서 조작\)
+* state : 내부적으로 상태를 관리할 때 사용하는 정보
+
