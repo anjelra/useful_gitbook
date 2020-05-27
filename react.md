@@ -110,7 +110,7 @@ export default App;
 
 ### react component 쪼개기
 
-![](.gitbook/assets/image%20%2821%29.png)
+![](.gitbook/assets/image%20%2822%29.png)
 
 ####  App.js 구성
 
@@ -166,5 +166,11 @@ export default TOC;
   * bind\(\)함수를 통해서 this를 유지시켜 준다.
   * 화살표 함수 =&gt; 를 사용해서 this를 유지시켜 준다.
 
+### 데이터 전달방
 
+![](.gitbook/assets/image%20%2823%29.png)
+
+상위 component 가 하위 component 로 데이터를 전달할 때는 props를 이용해서 전달한다.
+
+하위 component에서 상위 component의 데이터를 전달할 때는 event 를 쓴다.\(props는 바꿀 수 없기 때문에\)
 
