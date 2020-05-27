@@ -166,7 +166,7 @@ export default TOC;
   * bind\(\)함수를 통해서 this를 유지시켜 준다.
   * 화살표 함수 =&gt; 를 사용해서 this를 유지시켜 준다.
 
-### 데이터 전달방
+### 데이터 전달방식  
 
 ![](.gitbook/assets/image%20%2823%29.png)
 
