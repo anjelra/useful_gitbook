@@ -179,3 +179,5 @@ export default TOC;
 * shouldComponentUpdate\(\) 함수의 return 값이 false면 render\(\) 함수가 호출되지 않는다.
 * shouldComponentUpdate\(\)는 두 개의 매개변수를 가지는데 이 매개변수를 통해 새롭게 생성된 props, state 값에 접근할 수 있고,  이전 값에도 접근할 수 있다.\(ex: newProps.data, this.props.data\)
 
+### 성능에 문제가 있다면 Immutable.js 를 찾아보자!! 
+
