@@ -143,5 +143,7 @@ description: terminal 창으로 연습해보기
 2. git branch --delete '삭제할 브랜치명' -&gt; local에서 삭제
 3. git push origin :' 삭제할 브랜치명' -&gt; remote branch 삭제\(저장소 branch도 삭제 완료\)
 
+### git clone
 
+* git clone 'repository address' -&gt; clone을 뜨게 되면 git 형태도 가지고 올 수 있어서 바로 커밋이 가능하다. 주소를 알면 이렇게 하는게 조음.
 
