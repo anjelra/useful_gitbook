@@ -17,7 +17,8 @@
 * [연봉인상률 계산기](undefined-2.md)
 * [SPA\(Single Page Application\)](spa-single-page-application.md)
 * [storybook](storybook.md)
-* [react](react.md)
+* [react](react/README.md)
+  * [redux](react/redux.md)
 
 ## 읽은 책을 정리 <a id="undefined-1"></a>
 
