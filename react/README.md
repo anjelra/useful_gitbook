@@ -17,5 +17,9 @@
 
 ![](../.gitbook/assets/030cb405-366c-4a5f-9894-723e3b2ee004.png)
 
+### react를 이용한 SSR\(Server Side Rendering\)
+
+{% embed url="https://dev-momo.tistory.com/entry/React-Server-Side-Rendering" %}
+
 
 
