@@ -110,3 +110,82 @@ export default App;
 
 ### react component 쪼개기
 
+![](../.gitbook/assets/9ed40ace-15ed-4ba9-a3cf-462e1146def8.png)
+
+#### App.js 구성
+
+```text
+import React, { Component } from 'react';
+import './App.css';
+import TOC from './components/TOC';
+import Content from './components/Content';
+import Subject from './components/Subject';
+```
+
+#### 예를 들어, component TOC.js 파일을 살펴보기\(이런식으로 쓰면 재사용이 용이하며 소스도 간결해짐\)
+
+```text
+// React 라는 라이브러리에서 Component 라는 클래스를 로딩한다는 뜻
+import React, { Component } from 'react';
+
+// table of content(TOC) -> 목차
+class TOC extends Component {
+    render() {
+      return (
+        <nav>
+            <ul>
+                <li><a href="1.html">HTML</a></li>
+                <li><a href="2.html">CSS</a></li>
+                <li><a href="3.html">Javascript</a></li>
+            </ul>
+        </nav>
+      );
+    }
+}
+
+// TOC라는 js 를 가져다 쓰는 쪽에서 이 코드로 인해 TOC 라는 클래스를 가져갈수 있게 됨.
+export default TOC;
+```
+
+### props와 state\(철저하게 분리되어 있어야 함\)
+
+* props : 사용자에게 중요한 정보\(component를 외부에서 조작\)
+* state : 내부적으로 상태를 관리할 때 사용하는 정보
+
+### state
+
+상위 component인 App의 상태를 하위 component로 전달하고 싶을 때는 상위 component의 state값을 하위 component의 props 로 전달하는 것은 얼마든지 가능하다.
+
+### Each child in a list should have a unique "key" prop.
+
+**자동으로 리스트를 생성해줄 때에는 key 라는 prop 을 만들어줘야 한다. 이거는 우리가 사용하기 위해서라기 보다는 리엑트 자체에서 필요해서 구현해달라고 요청하는 것이기 때문에 그냥 unique한 값을 넣어주면 된다.**
+
+### react event
+
+* event를 엘리먼트에 걸어야 할 때, this는 해당 컴포넌트가 아닌 undefined 값이 됨. this를 유지시켜주기 위해서, 
+  * bind\(\)함수를 통해서 this를 유지시켜 준다.
+  * 화살표 함수 =&gt; 를 사용해서 this를 유지시켜 준다.
+
+### 데이터 전달방식
+
+[![](https://github.com/anjelra/useful_gitbook/raw/master/.gitbook/assets/image%20%2823%29.png)](https://github.com/anjelra/useful_gitbook/blob/master/.gitbook/assets/image%20%2823%29.png)
+
+상위 component 가 하위 component 로 데이터를 전달할 때는 props를 이용해서 전달한다.
+
+하위 component에서 상위 component의 데이터를 전달할 때는 event 를 쓴다.\(props는 바꿀 수 없기 때문에\)
+
+#### shouldComponentUpdate\(newProps, newState\) 함수
+
+* render\(\) 함수 전에 호출된다.
+* shouldComponentUpdate\(\) 함수의 return 값이 true면 render\(\) 함수가 호출된다.
+* shouldComponentUpdate\(\) 함수의 return 값이 false면 render\(\) 함수가 호출되지 않는다.
+* shouldComponentUpdate\(\)는 두 개의 매개변수를 가지는데 이 매개변수를 통해 새롭게 생성된 props, state 값에 접근할 수 있고, 이전 값에도 접근할 수 있다.\(ex: newProps.data, this.props.data\)
+
+#### 성능에 문제가 있다면 Immutable.js 를 찾아보자!!
+
+#### React-Router
+
+{% embed url="https://velog.io/@ki\\\_blank/React-Router-1.-8njzuummrs" %}
+
+
+
