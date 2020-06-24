@@ -2,10 +2,12 @@
 
 ### create-react-app 사용해서 react 개발환경 만들기
 
-![](../.gitbook/assets/a7d079e1-82ee-4b47-8a61-6a2c2c9a51b9.png)
-
-* Presentational 컴포넌트는 단순히 뷰 만들 보여주기 위해 만들어진 컴포넌트
-* Container 컴포넌트는 리덕스와 연동된 컴포넌트 
+1. erminal 에서 sudo npm install -g create-react-app
+2. create-react-app -V \\(version 확인\\)
+3. 바탕화면에 react-app 이라는 폴더 생성
+4. terminal 로 해당 폴더로 이동\\(cd /Users/song-anjelra/Desktop\\)
+5. react-app 폴더로 이동\\(cd react-app\\)
+6. create-react-app . 입력\\(react 환경 구축\\) -&gt; 완료가 되면 해당 폴더에 하단과 같이 나옴.
 
 ### Container 컴포넌트
 
