@@ -1,6 +1,6 @@
 # react
 
-### Presentational 컴포넌트 vs Container 컴포넌트
+### create-react-app 사용해서 react 개발환경 만들기
 
 ![](../.gitbook/assets/a7d079e1-82ee-4b47-8a61-6a2c2c9a51b9.png)
 
