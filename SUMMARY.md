@@ -18,6 +18,7 @@
 * [SPA\(Single Page Application\)](spa-single-page-application.md)
 * [storybook](storybook.md)
 * [react](react/README.md)
+  * [github pages 무료 호스팅 사용하기](react/github-pages.md)
   * [redux](react/redux.md)
 
 ## 읽은 책을 정리 <a id="undefined-1"></a>
