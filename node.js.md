@@ -18,4 +18,22 @@
 * mongodb의 insertOne과 같은 메소드는 promise를 반환해 주기 때문에 then을 사용할 수 있고, 마찬가지로 async, await 가 따로 promise 의 구현이 필요 없이 사용이 가능하다.
 * async 함수는 무조건 Promise를 반환한다.
 * await 도 무조건 Promise를 반환하게 만들어야 한다.
+* 만약, async 함수의 return 값을 가지고 무엇을 작업하고 싶다면, async 함수는 Promise를 return 하기 때문에 then을 써서 그 다음에 원하는 작업을 해 주어야 한다.
+
+```javascript
+async function test() {
+    const insertUer = await mongodb.collection('user')
+    .insertOne({id: userid, name: username, password: userid});
+    
+    return insertUser.result.ok;
+}
+
+test()
+.then((result) => {
+    if (result == 1) {
+        alert('추가 되었습니다.');
+    }
+})
+
+```
 
