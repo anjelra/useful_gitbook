@@ -16,4 +16,6 @@
 
 * async와 await는 같은 함수 안에 있어야 사용할 수 있다.
 * mongodb의 insertOne과 같은 메소드는 promise를 반환해 주기 때문에 then을 사용할 수 있고, 마찬가지로 async, await 가 따로 promise 의 구현이 필요 없이 사용이 가능하다.
+* async 함수는 무조건 Promise를 반환한다.
+* await 도 무조건 Promise를 반환하게 만들어야 한다.
 
