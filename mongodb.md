@@ -129,6 +129,12 @@ db.dropUser("anjelra");
 
 {% embed url="https://www.zerocho.com/category/MongoDB/post/59a1870210b942001853e250" %}
 
+### moongse
+
+{% embed url="https://www.zerocho.com/category/MongoDB/post/5963b908cebb5e001834680e" %}
+
+
+
 ### mongodb의 권한이 설정되어 있다면?
 
 1. admin 으로 변경\(mongo -u root -p "1234"\)
