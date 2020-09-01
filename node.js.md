@@ -37,3 +37,8 @@ test()
 
 ```
 
+### 사용중인 node 서버 찾기 및 kill
+
+* sudo lsof -i : {port} -&gt; port번호가 사용중인 process ID를 얻기.
+* sudo kill -9 :{PID} -&gt; kill
+
