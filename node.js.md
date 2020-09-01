@@ -42,3 +42,9 @@ test()
 * sudo lsof -i : {port} -&gt; port번호가 사용중인 process ID를 얻기.
 * sudo kill -9 :{PID} -&gt; kill
 
+### REST API 에러 처리
+
+{% embed url="https://velog.io/@smooth97/Node.js-Restful-API-wok2wqo7yu" %}
+
+
+
