@@ -46,5 +46,7 @@ test()
 
 {% embed url="https://velog.io/@smooth97/Node.js-Restful-API-wok2wqo7yu" %}
 
+{% embed url="https://developer.mozilla.org/ko/docs/Web/HTTP?Status" %}
+
 
 
