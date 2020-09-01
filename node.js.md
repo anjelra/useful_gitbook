@@ -48,5 +48,7 @@ test()
 
 {% embed url="https://developer.mozilla.org/ko/docs/Web/HTTP?Status" %}
 
+{% embed url="https://sanghaklee.tistory.com/61" %}
+
 
 
