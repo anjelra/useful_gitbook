@@ -21,6 +21,7 @@
 * [react](react/README.md)
   * [redux](react/redux.md)
 * [github pages 무료 호스팅 사용하기](github-pages.md)
+* [visual studio code](visual-studio-code.md)
 
 ## 읽은 책을 정리 <a id="undefined-1"></a>
 

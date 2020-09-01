@@ -6,7 +6,21 @@
 
 {% embed url="https://www.zerocho.com/category/MongoDB/post/5963b908cebb5e001834680e" %}
 
+### mongoose를 사용하려면
 
+1. mongoose install.
+2. mongoose connect.
+3. mongoose schema 정의. \(ex: var schema = mongoose.Schema; var blogSchema = new Schema\({author: ObjectId, title:  String, body: String, date: Date}\);
+4. 정의한 schema 를 사용할 수 있도록, model를 만들어 준다.\(ex: var blog = mongoose.model\('blog', blogSchema\);
+5. 모델을 사용하려면, 모델의 인스턴스를 만들어 주어야 한다. 생성한 인스턴스를 이용하여 우리가 원하는 실제 데이터베이스 작업을 수행할 수 있다. \(ex: var instance = new blog\(\); instance.title = 'hello';\)
 
+### Schema
 
+* 스키마에 모델을 생성하려면, \(var blog = mongoose.model\('blog', blogSchema, 'blog'\);
+* 생성한 스키마를 확인해보려면 require\('mongoose'\).model\('생성한 모델명'\)을 입력하면 내가 생성한 스키마에 따른 모델이 잘 생성되었는지 확인할 수 있다.
+
+### Model data 
+
+* find\(조건에 맞는 모든 항목을 리턴\) : await User.find\({id: userid, password: password}\)
+  * 결과값을 보면 \_doc에 데이터가 전부 들어 있어 접근할 수 있지만, 각각의 결과\(배열\)에 보면, get, set이 있어서 그냥 list\[0\].name 처럼 뽑아 쓸 수 있다.
 
