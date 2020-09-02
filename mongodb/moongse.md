@@ -24,3 +24,7 @@
 * find\(조건에 맞는 모든 항목을 리턴\) : await User.find\({id: userid, password: password}\)
   * 결과값을 보면 \_doc에 데이터가 전부 들어 있어 접근할 수 있지만, 각각의 결과\(배열\)에 보면, get, set이 있어서 그냥 list\[0\].name 처럼 뽑아 쓸 수 있다.
 
+### Mongoose save
+
+* mongoose save 메소드를 사용하게 되면, _v 라는 필드가 나타날 것이다. 이것은 \_id처럼 mongoose에서 버전 관련 속성을 자동으로 입력하는 것인데, 해당 필드 이름을 변경할 수 있다. ex\) new Schema\({..}, {versionKey: "\_versionKey'}\);_
+
