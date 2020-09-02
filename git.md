@@ -85,7 +85,7 @@ description: terminal 창으로 연습해보기
 * git status -&gt; git 상태 확인
 * git merge &lt;merge하고싶은 브랜치&gt; -&gt; ex\) git merge 2020\_03\_24
 * git commit -m'master merge' -&gt; 이렇게 하면 merge가 됨. 현재는 내 local에만 있는 상태임.
-* git push origin 2020\_03\_24 -&gt; remote 브랜치에 master 머지 
+* git push origin master -&gt; remote 브랜치에 master 머지 
 
 #### 유용한 터미널 명령어
 
