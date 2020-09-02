@@ -28,3 +28,7 @@
 
 * mongoose save 메소드를 사용하게 되면, _v 라는 필드가 나타날 것이다. 이것은 \_id처럼 mongoose에서 버전 관련 속성을 자동으로 입력하는 것인데, 해당 필드 이름을 변경할 수 있다. ex\) new Schema\({..}, {versionKey: "\_versionKey'}\);_
 
+### Mongoose 사용자 정의 schema
+
+* 사용자 정의 schema를 만들 경우에는, schema에 선언한 필드를 사용하지 않으려면 반드시 명시를 해 주어야 한다.\(ex: userSchema.statics.create = function\(userId, name, password\) {const newUser = new this\({id: userId, name, password}\);  return newUser.save\(\)}
+
