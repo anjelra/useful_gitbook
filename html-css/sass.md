@@ -1,0 +1,10 @@
+# sass
+
+css 전처리기로 웹페이지에서는 읽을 수 없어서 css로 변환해야 한다. 변환을 하기 위해 자동화 도구를 사용할 수 있는데 그 중 하나가 gulp 이다.
+
+### gulp
+
+{% embed url="https://programmingsummaries.tistory.com/356" %}
+
+
+
