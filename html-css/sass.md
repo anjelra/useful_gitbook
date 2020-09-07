@@ -80,3 +80,42 @@ $control-margin: 10px;
 }
 ```
 
+### sass 변환 스타일
+
+* nested \(기본값\)
+
+```css
+ul {
+    font-family: Georgia;
+    color: #333;}
+    ul li {
+        display: inline-block;
+    }
+```
+
+* expanded
+
+```css
+ul {
+    font-family: Georgia;
+    color: #333;
+}
+
+ul li {
+    display: inline-block;
+}
+```
+
+* compact \(선언이 여러개 있어도 줄바꿈을 하지 않습니다.\)
+
+```css
+ul {font-family: Georgia; color: #333;}
+ul li {display: inline-block;}
+```
+
+* compressed \(불필요한 공백을 모두 제거합니다.\)
+
+```css
+ul{font-family:Georgia;color: #333;}ul li{display:inline-block;}
+```
+
