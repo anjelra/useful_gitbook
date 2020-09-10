@@ -8,5 +8,7 @@
 $ npm install --save typescript @types/node @types/react @types/react-dom @types/jest
 ```
 
+{% embed url="https://velog.io/@velopert/typescript-basics" %}
+
 
 
