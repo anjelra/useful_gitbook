@@ -51,3 +51,72 @@ function Counter() {
 
 ```
 
+```jsx
+// typescript에서 useReducer를 사용하는 방법
+// 1. Action 함수를 정의한다.
+// 2. state 의 타입을 정의한다.
+// 3. reducer를 정의한다.(Action에 따른 state값을 어떻게 변화시켜줄지 정의한다.)
+// 4. useReducer를 사용하여 해당 state와 초기값을 연결해준다.
+// 5. 사용해본다.
+
+import React, {useReducer} from 'react';
+
+type Color = 'red' | 'orange' | 'yellow';
+
+type State = {
+    count: number;
+    text: string;
+    color: Color;
+    isGood: boolean;
+};
+
+type Action = 
+                { type: 'SET_COUNT', count: number}
+            |   { type: 'SET_TEXT', text: string} ;
+
+// reducer는 state와 action을 매개변수로 받아, 
+// 두개를 연결해주는 함수를 만들어야 한다.
+// reducer 함수는 return 값이 state와 동일한 State를 리턴값으로 줘야 한다.
+function reducer(state: State, action: Action): State {
+    switch (action.type) {
+        case 'SET_COUNT';
+                return {
+                    ...sate,
+                    count: action.count
+                };
+                
+        case 'SET_TEXT':
+                return {
+                    ...state,
+                    text: action.text
+                };        
+    }
+}
+
+function ReducerSample() {
+    const [state, dispatch] = useReducer(reducer, {
+        count: 0,
+        text: 'hello',
+        color: 'red',
+        isGood: true
+    });
+    
+    const setCount = () => dispatch({type: 'SET_COUNT': count: 5});
+    const setText = () =>  dispatch({type: 'SET_TEXT', text: 'bye'});
+    return (
+        <div>
+            <p>
+                <code>count: </code> {state.count}
+            </p>
+            <p>
+                <code>text: </code> {state.text}
+            </p>
+            <div>
+                <button onClick={setCount}></button>
+                <button onClick={setText}></button>
+            </div>
+        </div>
+    );
+}
+```
+
