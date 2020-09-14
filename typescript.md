@@ -15,7 +15,8 @@ $ npm install --save typescript @types/node @types/react @types/react-dom @types
 1. action 의 type을 정해준다.
 2. action 생성 함수를 만들어준다.
 3. 액션 객체들에 대한 type을 준비한다.
-4. reducer를 만들어 준다.\(reducer는 액션에 따른 state 값을 어떻게 변화시켜줄지 정의한다.\)
+4. 상태의 타입과 상태의 초깃값을 선언한다.
+5. reducer를 만들어 준다.\(reducer는 액션에 따른 state 값을 어떻게 변화시켜줄지 정의한다.\)
 
 #### 액션 type 선언
 
