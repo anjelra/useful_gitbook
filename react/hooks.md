@@ -137,4 +137,17 @@ const increaseId = () => {
 
 * 화면이 렌더링이 된 후 실행된다.
 * componentDidMount, componentDidUpdate와 다르게 레이아웃 배치와 그리기를 완료한 후에 발생한다.
+* 특정, props가 변경될 때에만 필요하다면, 특정 props 조건을 걸 수 있다.
+
+```jsx
+useEffect(
+    () => {
+        const subscription = props.source.subscribe();
+        return () => {
+            subscription.unsubscribe();
+        };
+    },
+    [props.source]
+);
+```
 
