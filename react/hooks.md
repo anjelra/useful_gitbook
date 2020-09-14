@@ -120,3 +120,21 @@ function ReducerSample() {
 }
 ```
 
+### useRef
+
+* 리엑트 컴포넌트에서 외부 라이브러리의 인스턴스 또는 DOM을 특정 값 안에 담을 때 사용한다. 추가적으로, 이를 통해 컴포넌트 내부에서 관리하고 있는 값을 관리할 때 유용하다. **단, 이 값은 렌더링과 관계가 없어야 한다.**
+
+```jsx
+const id = useRef<number>(0);
+
+// useRef 는 ~.current 를 통해 값을 유추할 수 있다.
+const increaseId = () => {
+    id.current += 1;
+};
+```
+
+### useEffect
+
+* 화면이 렌더링이 된 후 실행된다.
+* componentDidMount, componentDidUpdate와 다르게 레이아웃 배치와 그리기를 완료한 후에 발생한다.
+
