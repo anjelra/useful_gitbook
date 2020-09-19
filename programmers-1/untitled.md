@@ -4,9 +4,9 @@ description: 문제풀이 3일차(20.01.02 목요일)
 
 # 3일차
 
-![](../.gitbook/assets/image%20%2834%29.png)
+![](../.gitbook/assets/image%20%2836%29.png)
 
-![](../.gitbook/assets/image%20%2829%29.png)
+![](../.gitbook/assets/image%20%2831%29.png)
 
 ```javascript
 function solution(array, commands) {
