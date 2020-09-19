@@ -46,6 +46,7 @@
   * [6일차](programmers-database/6.md)
   * [5일차](programmers-database/5.md)
   * [4일차](programmers-database/4.md)
+  * [3일차](programmers-database/3.md)
 
 ## 필요한 것들을 정리 <a id="undefined-3"></a>
 
