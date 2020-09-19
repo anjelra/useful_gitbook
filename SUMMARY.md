@@ -30,6 +30,7 @@
   * [5일차](programmers-1/5.md)
   * [4일차](programmers-1/4.md)
   * [3일차](programmers-1/untitled.md)
+  * [2일차](programmers-1/2.md)
 * [programmers database](programmers-database/README.md)
   * [16일차](programmers-database/16.md)
   * [15일차](programmers-database/15.md)
