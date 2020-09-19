@@ -1,6 +1,6 @@
 # Table of contents
 
-* [시작 페이지](README.md)
+* [더 나은 개발자가 되기 위한 노력들.](README.md)
 
 ## 코딩테스트 <a id="undefined-3"></a>
 
