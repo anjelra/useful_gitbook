@@ -26,6 +26,7 @@
   * [9일차](programmers-1/9.md)
   * [8일차](programmers-1/8.md)
   * [7일차](programmers-1/7.md)
+  * [6일차](programmers-1/6.md)
 * [programmers database](programmers-database/README.md)
   * [16일차](programmers-database/16.md)
   * [15일차](programmers-database/15.md)
