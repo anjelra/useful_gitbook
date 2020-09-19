@@ -4,8 +4,6 @@
 
 ## programmers 문제풀이 <a id="programmers-sub1"></a>
 
-* [programmers](programmers-sub1/untitled-1.md)
-
 ---
 
 * [git](git.md)
