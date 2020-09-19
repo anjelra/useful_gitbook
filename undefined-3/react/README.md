@@ -9,15 +9,15 @@
 5. react-app 폴더로 이동\(cd react-app\)
 6. create-react-app . 입력\(react 환경 구축\) -&gt; 완료가 되면 해당 폴더에 하단과 같이 나옴.
 
-![](../.gitbook/assets/578c008d-1d8a-4dff-a0c8-a447db1c286b.png)
+![](../../.gitbook/assets/578c008d-1d8a-4dff-a0c8-a447db1c286b.png)
 
 ### create-react-app 실행시키기
 
 1. terminal \(cd /Users/song-anjelra/Desktop/react-app 폴더로 이동\)에서 npm run start 라고 입력.
 
-![](../.gitbook/assets/231c7c42-a3d4-4c42-a5d2-529fab49f084.png)
+![](../../.gitbook/assets/231c7c42-a3d4-4c42-a5d2-529fab49f084.png)
 
-![](../.gitbook/assets/1a742ee8-20f2-4af0-ae04-3c4243a6241b.png)
+![](../../.gitbook/assets/1a742ee8-20f2-4af0-ae04-3c4243a6241b.png)
 
 
 
@@ -27,7 +27,7 @@
 2. npm install -g serve \(serve라는 명령어를 이용해서 어디서든지 server를 셋팅할 수 있게 설정\)
 3. serve -s build \(build폴더안에 있는 파일을 document root로 하겠다 라는 뜻\(-s\)\)
 
-![](../.gitbook/assets/c8763e9d-291a-4d1e-828d-81e812bc8bb3.png)
+![](../../.gitbook/assets/c8763e9d-291a-4d1e-828d-81e812bc8bb3.png)
 
 ### react 기본 구조\(아무리 복잡해져도 이 부분은 변하지 않는다\)
 
@@ -110,7 +110,7 @@ export default App;
 
 ### react component 쪼개기
 
-![](../.gitbook/assets/9ed40ace-15ed-4ba9-a3cf-462e1146def8.png)
+![](../../.gitbook/assets/9ed40ace-15ed-4ba9-a3cf-462e1146def8.png)
 
 #### App.js 구성
 

@@ -33,12 +33,12 @@ description: terminal 창으로 연습해보기
 
 * git status\(깃 상태 확인하면 현재 작업중인 파일 목록이 나옴\)
 
-![](.gitbook/assets/image%20%2812%29.png)
+![](../.gitbook/assets/image%20%2812%29.png)
 
 * git add . \(전체 파일을 add 함\) -&gt; add를 무조건 해야 stash를 할 수 있음.
 * git status \( 깃 상태 다시 확인\) -&gt; 파일이 add 된 걸 알 수 있음.
 
-![](.gitbook/assets/image%20%2810%29.png)
+![](../.gitbook/assets/image%20%2810%29.png)
 
 * git stash save '원하는 stash 이름' -&gt; 이제 stash 가 되었음. \(ex: ㅋㅋㅋ\)
 
@@ -48,7 +48,7 @@ description: terminal 창으로 연습해보기
 
 * git stash list -&gt; stash 한 list를 볼 수 있음.\(저장할 때 이름을 잘 저장해놓으면 좋겟죠??\)
 
-![&#xC694;&#xAE30; &#xC774;&#xB807;&#xAC8C; &#xB0B4;&#xAC00; &#xC800;&#xC7A5;&#xD55C; &#xAC8C; &#xC788;&#xB124;??](.gitbook/assets/image%20%281%29.png)
+![&#xC694;&#xAE30; &#xC774;&#xB807;&#xAC8C; &#xB0B4;&#xAC00; &#xC800;&#xC7A5;&#xD55C; &#xAC8C; &#xC788;&#xB124;??](../.gitbook/assets/image%20%281%29.png)
 
 * q 를 누르면 빠져나올 수 있음. stash list에서!!
 * git stash apply stash@{0} -&gt; 꺼내오고 싶은 stash 를 꺼내온다!! ex: stash@{0}
