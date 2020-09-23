@@ -151,3 +151,28 @@ useEffect(
 );
 ```
 
+### useSelector
+
+* 리덕스 스토어의 상태\(state\)에 접근할 수 있다.
+
+```jsx
+// 아래와 같이 스토어의 상태를 가지고 올 수 있다.
+// state.login.userId 는 기존에 connect를 이용하여 리덕스에 접근한
+// mapStateToProps와 비슷하다고 생각하면 된다.
+const {userId} = useSelector(state => {
+    state.login.userId
+});
+```
+
+### useDispatch
+
+* 컴포넌트 내에서 redux 의  dispatch에 접근할 수 있게 만들어 준다.
+
+```jsx
+import createUser from 'store/modules/login';
+import { useDispatch } from 'react-redux';
+
+// 정의해준 액션함수를 import 해와서 이렇게 직관적으로 접근할 수 있게 된다.
+const dispatch = useDispatch(createUser(userId, userPwd));
+```
+
