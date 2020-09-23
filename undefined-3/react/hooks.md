@@ -174,7 +174,9 @@ import { useDispatch } from 'react-redux';
 
 // 정의해준 액션함수를 import 해와서 이렇게 직관적으로 접근할 수 있게 된다.
 const dispatch = useDispatch();
-const createUser = dispatch(createUser(userId, userPwd));
+const createUser = (userId, userPwd) => {
+    dispatch(createUser(userId, userPwd))
+};
 ```
 
 
