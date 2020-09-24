@@ -179,5 +179,20 @@ const createUser = (userId, userPwd) => {
 };
 ```
 
+### useHistory
+
+* a페이지에서 b페이지로 이동하고 싶을 때 useHistory를 쓰면 된다. 
+
+```jsx
+const history = useHistory();
+
+history.push({
+    pathname: '/test/',
+    state: {
+        userId: userId
+    }
+});
+```
+
 
 
