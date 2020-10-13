@@ -62,6 +62,7 @@
 * [연봉인상률 계산기](undefined-3/undefined-2.md)
 * [Typescript](undefined-3/typescript/README.md)
   * [node에 typescript](undefined-3/typescript/node-typescript.md)
+  * [visual basic code로 ts debugging](undefined-3/typescript/visual-basic-code-ts-debugging.md)
 * [mongodb](undefined-3/mongodb/README.md)
   * [moongse](undefined-3/mongodb/moongse.md)
 * [problem solving](undefined-3/problem-solving.md)
