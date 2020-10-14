@@ -61,6 +61,7 @@
 * [SPA\(Single Page Application\)](undefined-3/spa-single-page-application.md)
 * [연봉인상률 계산기](undefined-3/undefined-2.md)
 * [Typescript](undefined-3/typescript/README.md)
+  * [tsconfig.prod.json](undefined-3/typescript/tsconfig.prod.json.md)
   * [node에 typescript](undefined-3/typescript/node-typescript.md)
   * [visual basic code로 ts debugging](undefined-3/typescript/visual-basic-code-ts-debugging.md)
 * [mongodb](undefined-3/mongodb/README.md)

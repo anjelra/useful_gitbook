@@ -13,14 +13,15 @@ $ yarn add @types/node, @types/express
 $ npx tsc -init
 ```
 
-#### 주의할 점
+#### 주의할 점// 아래와 같이 입력하게 되면, require는 any type이기 때문에
 
 ```typescript
-// 아래와 같이 입력하게 되면, require는 any type이기 때문에
 // typescript의 기능을 제대로 사용할 수 없다.
 const expess = require('express');
 
 // 따라서, 아래와 같이 쓰면 좋다.
 import * as express from 'express';
 ```
+
+### 
 
