@@ -76,6 +76,7 @@
   * [sass](undefined-3/html-css/sass.md)
   * [FE 개발자가 꼭 알아야 하는 css](undefined-3/html-css/fe-css.md)
   * [FE 개발자가 꼭 알아야 하는 html](undefined-3/html-css/fe-html-css.md)
+  * [img](undefined-3/html-css/img.md)
 * [vue](undefined-3/vue.md)
 * [webpack](undefined-3/webpack.md)
 * [정규표현식](undefined-3/undefined.md)
