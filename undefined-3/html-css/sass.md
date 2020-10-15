@@ -119,3 +119,11 @@ ul li {display: inline-block;}
 ul{font-family:Georgia;color: #333;}ul li{display:inline-block;}
 ```
 
+### scss 문법
+
+* 변수 선언
+
+```css
+$white: #fff;
+```
+
