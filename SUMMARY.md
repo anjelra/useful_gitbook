@@ -73,6 +73,7 @@
 * [html, css](undefined-3/html-css/README.md)
   * [codepen](undefined-3/html-css/codepen/README.md)
     * [tab 만들기](undefined-3/html-css/codepen/tab.md)
+    * [inline, inline-block, block](undefined-3/html-css/codepen/inline-inline-block-block.md)
   * [sass](undefined-3/html-css/sass.md)
   * [FE 개발자가 꼭 알아야 하는 css](undefined-3/html-css/fe-css.md)
   * [FE 개발자가 꼭 알아야 하는 html](undefined-3/html-css/fe-html-css.md)
