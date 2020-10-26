@@ -205,7 +205,7 @@ span {
 * block \(위에서 아래로 쌓임\)
   * div, table, p, h1, h2, h3 등등이 있음
 * inline \(옆으로 쌓임\)
-  * width, height를 가질 수 없음. margin, padding은 먹지만 상하 margin, 상하 padding은 먹지 않음.
+  * width, height를 가질 수 없음. padding 가능. margin은 가능하나 좌우 여백만 가능.
   * border는 가능함
 * inline-block\(옆으로 쌓임\)
   * width, height, padding, margin을 다 사용할 수 있음. 
