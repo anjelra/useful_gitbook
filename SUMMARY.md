@@ -52,6 +52,7 @@
 
 ## 필요한 것들을 정리 <a id="undefined-3"></a>
 
+* [code mirror](undefined-3/code-mirror.md)
 * [visual studio code](undefined-3/visual-studio-code.md)
 * [github pages 무료 호스팅 사용하기](undefined-3/github-pages.md)
 * [react](undefined-3/react/README.md)
