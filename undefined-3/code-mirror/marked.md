@@ -4,6 +4,10 @@ description: codemirror를 이용해 만든 markdown 문서를 변환해 줌
 
 # marked
 
+### react와 marked 연동
+
+* yarn add marked --save
+
 ### 이미 codemirror를 이용해서 markdown 형식으로 작성한 문서를 보이게 하는 법
 
 ```jsx
