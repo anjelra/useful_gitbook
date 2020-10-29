@@ -1,5 +1,5 @@
 ---
-description: codemirror를 이용해 만든 markdown 문서를 변환해 줌
+description: codemirror를 이용해 만든 markdown 문서를 변환해 주는 라이브러리
 ---
 
 # marked
