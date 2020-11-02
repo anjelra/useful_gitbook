@@ -151,6 +151,20 @@ useEffect(
 );
 ```
 
+* render시에 한번만 실행되게 하려면?
+
+```jsx
+const dispatch = useDispatch();
+const selectList = () => {
+    dispatch(searchAll());
+};
+
+// useEffect에 [] 을 넣어주면,rendering시에 한번만 실행이 된다.
+useEffect(() => {
+    selectList();
+}), [];
+```
+
 ### useSelector
 
 * 리덕스 스토어의 상태\(state\)에 접근할 수 있다.
