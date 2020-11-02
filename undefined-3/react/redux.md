@@ -17,3 +17,18 @@
 
 ![](../../.gitbook/assets/030cb405-366c-4a5f-9894-723e3b2ee004.png)
 
+### state를 통한 data 다루기
+
+#### Objects are not valid as a React child 에러발생 이
+
+* todo 처럼 list를 다룰 경우에는 action 함수에서 payload를 받아서 통으로 넘겨주면 되는데 이렇게 되면 화면에 뿌려줄 때 map 을 이용해서 데이터를 받아야 하기 때문에 해당 state를 map을 이용해 변환해서 뿌려줘야 한다.
+
+```jsx
+const {docsList} = useSelector(state => ({
+    docsList: state.docs.docsList
+}));
+const listItems = docsList.map(list => (
+    <li key={list._id}>{list.path}</li>
+));
+```
+
