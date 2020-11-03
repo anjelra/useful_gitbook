@@ -16,6 +16,17 @@ description: class 컴포넌트에서는 사용할 수 없다.
 // 아래와 같이, [count, setCount] 라 쓸 수 있는 것은
 // 자바스크립트의 구조 분해 할당 때문이다.
 const [count, setCount] = useState(0);
+
+// 배열일 경우
+const [inArray, setInArray] = useState([]);
+
+setInArray([
+    ...inArray,
+    {
+        id: inArray.length,
+        value: Math.random()
+    }
+]);
 ```
 
 #### 참고\(자바스크립트 구조 분해 할당 es6\)
