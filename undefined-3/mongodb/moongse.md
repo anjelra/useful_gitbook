@@ -32,3 +32,9 @@
 
 * 사용자 정의 schema를 만들 경우에는, schema에 선언한 필드를 사용하지 않으려면 반드시 명시를 해 주어야 한다.\(ex: userSchema.statics.create = function\(userId, name, password\) {const newUser = new this\({id: userId, name, password}\);  return newUser.save\(\)}
 
+### Mongoose populate\(sql의 join과 비슷한 기능을 구현\)
+
+#### sql join과 다른점
+
+* join은 db 자체에서 데이터를 합쳐주는 것이나, populate는 일단 전부다 조회를 한 다음에 자바스크립트 단에서 합쳐주는 것이기 때문에 성능이 좋지 않다.\(populate를 여러번 중첩해서 사용하게 되면 성능에 대한 issue가 생길 수 있다.\)
+
