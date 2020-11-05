@@ -38,3 +38,32 @@
 
 * join은 db 자체에서 데이터를 합쳐주는 것이나, populate는 일단 전부다 조회를 한 다음에 자바스크립트 단에서 합쳐주는 것이기 때문에 성능이 좋지 않다.\(populate를 여러번 중첩해서 사용하게 되면 성능에 대한 issue가 생길 수 있다.\)
 
+#### 사용법
+
+* docSchema의 \_id와 docPersonalSchema 의 docID를 연결해주기 위해서는 docID에 type을 아래와 같이 정의해주고, ref: '바라볼 collection이름' 을 입력해 준다. 이렇게 되면 mongoose에서 두 개의 스키마에 연관성을 부여해 준다.
+
+```javascript
+// 스키마 생
+const docSchema = new mongoose.Schema({
+    path: {type: String, required: true},
+    title: {type: String, required: true}
+});
+
+const docPersonalSchema = new mongoose.Schema({
+    docID: {type: mongoose.Schema.Types.ObjectId, ref: 'doc', required: true},
+    owner: {type: String, required: true}
+});
+
+mongoose.model('doc', docSchema, 'doc');
+mongoose.model('personalDoc', docPersonalSchema, 'personalDoc');
+```
+
+#### 데이터 조회
+
+* 사용자 문서의 특정 사용자와 문서 id에 따라서 doc와 personalDoc 스키마의 데이터를 join 형식으로 합쳐서 가지고 오고 싶다면 아래와 같이 쿼리를 생성하면 된다.
+
+```javascript
+const readDoc = await PersonalDoc.find({owner: 'anjelra', docID: '123adfsfgqwer'})
+                                .populate('doc').exec();
+```
+
