@@ -219,5 +219,17 @@ history.push({
 });
 ```
 
+### useCallback
 
+* 함수를 캐싱\(또는 메모이제이션\)할 때 사용하는 훅입니다.
+* state가 변경되는 경우 컴포넌트가 다시 실행되는데 불필요한 렌더링이 일어나는 경우가 많다. 그럴 때 useCallback 훅을 사용해서 리렌더링이 되지 않도록 막으면 불필요한 렌더링이 일어나지 않는다.
+* 하단과 같이 작성시, 해당 컴포넌트가 재실행되도 useState나 useCallback 모두 과거의 값을 가져오므로 return 부분에서 달라지는게 없어서 리렌더링이 되지 않는다.
+
+```jsx
+const [visible, setVisible] = useState(false);
+
+const onClickButton = useCallback(() => {
+    setVisible(true);
+});
+```
 
