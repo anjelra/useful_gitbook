@@ -67,3 +67,12 @@ const readDoc = await PersonalDoc.find({owner: 'anjelra', docID: '123adfsfgqwer'
                                 .populate('doc').exec();
 ```
 
+### 특정 필만 조회
+
+```javascript
+const group = await PersonalDoc.find({owner: 'anjelra', docID: '123'})
+                .select('path _id').sort({path: 1}).exec();
+```
+
+
+
