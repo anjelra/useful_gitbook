@@ -74,5 +74,44 @@ const group = await PersonalDoc.find({owner: 'anjelra', docID: '123'})
                 .select('path _id').sort({path: 1}).exec();
 ```
 
+### aggregate
 
+#### match
+
+* find\({owner: 'anjelra'}\) 와 같은 sql의 where절과 같은 역할을 한다.
+
+#### group
+
+* group을 지을 field를 써주면 된다.
+
+#### sort\(1: 오름차순, -1: 내림차순\)
+
+* 정렬을 하려고 할 때 사용하면 된다.
+
+```javascript
+await Doc.aggregate([
+    {
+        $match: {
+            state: "active",
+            isPrivate: false
+        }
+    },
+    {
+        $group: {
+        // group을 지을 field를 넣어주면 되는데, 여러개일 때에는 _id안에다 
+        // 하단처럼 넣어줘야 한다.(_id란 이름은 다른 이름으로 대체 불가.)
+            _id: {
+                path: "$path"
+            }
+        }
+    },
+    {
+        $sort: {
+            path: 1
+        }
+    }
+]);
+```
+
+#### 
 
