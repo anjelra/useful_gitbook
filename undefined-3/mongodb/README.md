@@ -146,7 +146,66 @@ db.dropUser("anjelra");
 
 {% embed url="https://mongoosejs.com/docs/connections.html" %}
 
+### aggregate
 
+#### lookup
 
+* sql의 join과 비슷한 역할을 한다.\(단, sql은 쿼리 내에서 데이터를 조작하는 거지만, nosql은 자바스크립트 단에서 작업을 해준다는 것이 차이점이다.\)
+* from: 합칠 collection\(Personal schema\)
+* localField: 현재 조회중인 collection의 매칭할 field\(Doc schema\)
+* foreignField: 합칠 collection의 매칭할 field\(PersonalDoc schema\)
+* as: 출력할 때의 이
 
+```javascript
+const readDoc = await Doc.aggregate([
+    {
+        $lookup: {
+            from: "personalDoc",
+            localField: "_id",
+            foreignField: "docID",
+            as: "personalData"
+        }
+    }
+]);
+```
+
+#### match
+
+* sql의 where 절과 비슷한 역할을 한다.
+
+```javascript
+const readDoc = await Doc.aggregate([
+    {
+        // state가 active인 데이터를 추출한다.
+        $match: {
+            state: "active"
+        }
+    }
+]);
+```
+
+#### project
+
+* 출력할 필드를 정의하거나, \_id필드를 억제 또는 새 필드를 추가할 때 사용한다.
+
+```javascript
+const readDoc = await Doc.aggregate([
+    {
+        $project: {
+            title: 1,
+            content: 1,
+            createDate: 1,
+            personalData: {
+                $filter: {
+                    input: "$personalData",
+                    as: "item",
+                    cond: {
+                        $eq: ["$$item.owner": "anjelra"]
+                    }
+                }
+            }
+        }
+    }
+]);
+```
 
