@@ -50,5 +50,13 @@ test()
 
 {% embed url="https://sanghaklee.tistory.com/61" %}
 
+### address already in use 해결방법
 
+```javascript
+// 1.해당 포트번호를 찾는다.
+$ lsof -i TCP: port번호
+
+// 2.1번에서 검색된 PID를 사용한다.
+$ kill -9 PID
+```
 
