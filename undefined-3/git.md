@@ -147,3 +147,9 @@ description: terminal 창으로 연습해보기
 
 * git clone 'repository address' -&gt; clone을 뜨게 되면 git 형태도 가지고 올 수 있어서 바로 커밋이 가능하다. 주소를 알면 이렇게 하는게 조음.
 
+### git ignore node\_module not working
+
+* 이미 cache를 먹고 있어서 안되는 거라서 터미널에 아래와 같이 치면 된다.
+* git rm -r --cached node\_modules
+* git commit -m "removing node\_modules"
+
