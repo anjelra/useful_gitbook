@@ -74,6 +74,13 @@ const group = await PersonalDoc.find({owner: 'anjelra', docID: '123'})
                 .select('path _id').sort({path: 1}).exec();
 ```
 
+### 특정 field 제외
+
+```javascript
+const group = await PersonalDoc.find({owner: 'anjelra', docID: '1234'})
+                .select('-password').exec();
+```
+
 ### aggregate
 
 #### match
