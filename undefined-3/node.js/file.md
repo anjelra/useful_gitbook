@@ -39,6 +39,8 @@ import multer from 'multer';
 
 const storage: any = multer.diskStorage({
     // client에서 보낸 파일을 uploadFiles의 폴더에 저장하겠다라는 뜻.
+    // uploadFiles 폴더가 없을 수도 있기 때문에 서버시작할 때, 해당 폴더가 있는지 
+    // 체크를 해서 없으면 생성하는 코드를 넣어주면 된다.(하단의 셋팅 참조)
     destination(req: Request, file: any, cb: any) {
         cb(null, 'uploadFiles/');
     },
@@ -85,7 +87,23 @@ router.post('uploadSIngle', uploadWithOriginFileName.single('file'),
     });
 ```
 
+#### upload할 폴더가 없으면 체크 후, 생성하기\(서버 연결하는 부분에 작성\)
 
+```javascript
+import app from 'Server';
+import fs from 'fs';
+
+const port = Number(process.env.PORT || 3000);
+app.listen(port, () => {
+    const dir = './uploadFiles';
+    
+    if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir);
+    }
+    
+    logger.info('Express server started');
+});
+```
 
 {% embed url="https://www.npmjs.com/package/multer" %}
 
