@@ -107,5 +107,35 @@ app.listen(port, () => {
 
 {% embed url="https://www.npmjs.com/package/multer" %}
 
+### 이미지 조회\(서버에 있는 이미지 불러오기\)
 
+```javascript
+// server.ts
+router.get('/imageView/:imageName', (req: Request, res: Response) => {
+    try {
+        const image = path.join(path.dirname(path.dirname(__dirname)), 'uploadFiles/images/', req.params.imageName);    
+        
+        fs.readFile(image, (err, data) => {
+            res.writeHead(200, { "Content-Type": "image/" + req.params.imageName.split('.')[1]});
+            res.write(data);
+            res.end();
+        });
+    } catch (error) {
+        res.status(500)
+        .send({message: error.message});
+    }
+});
+```
+
+```jsx
+// react.js
+<div className="container">
+    {imageList ? imageList.map(list, idx) => (
+        <img key={idx}
+             src={`/imageView/${list.serverFileName}`}
+             alt=""
+        />
+    )}
+</div>
+```
 
