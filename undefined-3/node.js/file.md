@@ -107,7 +107,7 @@ app.listen(port, () => {
 
 {% embed url="https://www.npmjs.com/package/multer" %}
 
-### 이미지 조회\(서버에 있는 이미지 불러오기\)
+### 이미지 보여주\(서버에 있는 이미지 불러오기\)
 
 ```javascript
 // server.ts
@@ -135,7 +135,97 @@ router.get('/imageView/:imageName', (req: Request, res: Response) => {
              src={`/imageView/${list.serverFileName}`}
              alt=""
         />
-    )}
+    ): null}
 </div>
 ```
+
+### 파일 다운로드
+
+* image와 같이 get방식으로 호출하면 되는줄 알았는데, 파일 경로를 찾지 못하였다. 이유는 아직 확인을 못했다 ㅠ
+
+```javascript
+// server.ts
+router.post('/download', (req: Request, res: Response) => {
+    try {
+        const file = path.join(path.dirname(path.dirname(__dirname)), 'uploadFiles/files/', req.body.fileName);    
+        
+        if (fs.existsSync(file)) {
+            const filename = path.basename(file);    // 파일명 추출
+            const fileStream = fs.createReadStream(file);    // 파일을 읽을 수 있는 ReadStream을 생성.
+            
+            res.writeHead(200, {
+                'Content-Type': 'application/octet-stream',
+                'Content-Disposition': 'attachment; filename=' + filename
+            });
+            
+            fileStream.pipe(res);
+        } else {
+            res.status(404)
+            .send({message: '해당 파일이 없습니다.'});
+            return;
+        }
+    } catch (error) {
+        res.status(500)
+        .send({message: error.message});
+    }
+});
+```
+
+```javascript
+// react(middleware)
+export const docDownloadFile = (serverFileName: string, originFileName: string): AppThunk => dispatch => {
+    axios.post('/docs/api/docs/download', {
+        fileName: serverFileName
+    }, {
+        withCredentials: true,
+        responseType: 'bolb'    // 반드시, bolb type으로 받아야 한다.
+    }).then(res => {
+        if (res.data.message) {    // 실패 했다면
+            // 실패 로
+        } else {
+            let bolb = new Bolb([res.data]);
+            let downloadUrl = window.URL.createObjectURL(bolb);
+            let filename = '';
+            let disposition = res.headers["content-disposition"];
+            
+            if (disposition && disposition.includes("attachment")) {
+                let fileNameRegax = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/;
+                let matches = fileNameRegax.exec(disposition);    // 서버에서 header에 보낸 content-disposition을 찾는다.
+                
+                if (matches ! = null && matches[1]) {
+                    // fileName = matches[1].replace(/['"]/g, "");    -> 서버 파일명과 동일한 경우에는 이런식으로 하면 된다.
+                    fileName = originFileName;
+                }
+                
+                let a = document.createElement('a');
+                if (typeof a.download === "undefined") {
+                    window.location.href = downloadUrl;
+                } else {
+                    a.href = downloadUrl;
+                    a.download = fileName;    // download속성에 원하는 제목을 넣으면 해당 제목으로 문서가 떨어진다.
+                    document.body.appendChild(a);
+                    a.click();
+                    
+                    document.body.removeChild(a);    // 생성후 지워준다.
+                }
+            }
+        }
+    });
+};
+```
+
+```jsx
+// react component
+<div className="file-container">
+    {fileList ? fileList.map(idx, list) => (
+        <a href={}
+           onClick={(e) => downloadFile(e, list.serverFileName, list.originFileName)}
+        >
+            {list.originFileName}
+        </a>
+    ) : null}
+</div>
+```
+
+
 
