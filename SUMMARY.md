@@ -88,6 +88,10 @@
 * [정규표현식](undefined-3/undefined.md)
 * [git](undefined-3/git.md)
 
+## 새로 공부해야할 것들
+
+* [개발 동향](undefined/undefined.md)
+
 ## 읽은 책을 정리 <a id="undefined-1"></a>
 
 * [자바스크립트를 깨우치다](undefined-1/undefined/README.md)
