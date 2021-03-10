@@ -67,6 +67,7 @@
   * [node에 typescript](undefined-3/typescript/node-typescript.md)
   * [visual basic code로 ts debugging](undefined-3/typescript/visual-basic-code-ts-debugging.md)
 * [mongodb](undefined-3/mongodb/README.md)
+  * [mongodump](undefined-3/mongodb/mongodump.md)
   * [moongse](undefined-3/mongodb/moongse/README.md)
     * [mongoose + typescript](undefined-3/mongodb/moongse/mongoose-+-typescript.md)
 * [problem solving](undefined-3/problem-solving.md)
