@@ -89,6 +89,26 @@ db.createUser(
 )
 ```
 
+### database 삭제
+
+```javascript
+// 이거를 하기 위해서는, 해당 권한을 가지고 있어야 한다. 
+// 혹시 admin이 이 권한을 가지고 있지 않다면 해당 권한으로 업데이트 시켜줘야한다.
+db.dropDatabase();
+
+// 1. 계정이 아예 없는 경우
+use admin
+db.createUser({
+    user: 'admin',
+    pwd: 'password',
+    roles: [ { role: 'root', db: 'admin'} ]
+});
+
+// 2. 이미 계정이 있는 경우
+use admin
+db.grantRolesToUser('admin', [ { role: 'root', db: 'admin'} ]);
+```
+
 ### db user 삭제
 
 ```text
@@ -208,4 +228,6 @@ const readDoc = await Doc.aggregate([
     }
 ]);
 ```
+
+
 
