@@ -74,6 +74,7 @@
 * [problem solving](undefined-3/problem-solving.md)
 * [mysql](undefined-3/mysql.md)
 * [node.js](undefined-3/node.js/README.md)
+  * [pm2](undefined-3/node.js/pm2.md)
   * [file](undefined-3/node.js/file.md)
 * [javascript](undefined-3/javascript.md)
 * [html, css](undefined-3/html-css/README.md)
