@@ -198,7 +198,7 @@ span {
 
 `질문 : height: 50%는 몇 px 일까요??`
 
-`정답 : inline-block인 span 은 width, height, padding 가질 수 없음.`
+`정답 : inline인 span 은 width, height, padding 가질 수 없음.`
 
 #### 태그의 블록요소와 인라인 요소
 
