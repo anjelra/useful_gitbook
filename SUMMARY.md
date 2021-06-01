@@ -54,7 +54,8 @@
 
 * [code mirror](undefined-3/code-mirror/README.md)
   * [marked](undefined-3/code-mirror/marked.md)
-* [visual studio code](undefined-3/visual-studio-code.md)
+* [visual studio code](undefined-3/visual-studio-code/README.md)
+  * [tasks](undefined-3/visual-studio-code/tasks.md)
 * [github pages 무료 호스팅 사용하기](undefined-3/github-pages.md)
 * [react](undefined-3/react/README.md)
   * [debugging](undefined-3/react/debugging.md)
