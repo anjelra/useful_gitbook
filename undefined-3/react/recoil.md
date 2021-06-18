@@ -6,6 +6,8 @@ description: 상태관리 라이브러리
 
 {% embed url="https://blog.woolta.com/categories/1/posts/209" %}
 
+#### recoil을 사용하기 위해서는 react의 컴포넌트\(App\)을 RecoilRoot로 감싸줘야 한다.
+
 ### Atom
 
 * 상태 단위\(redux는 state와 비슷\)
@@ -48,4 +50,43 @@ export const countInputState = selector({
     }
 }); 
 ```
+
+* selector를 이용해 비동기 통신을 할 수 있음. \(비동기 처리를 위한 Suspene 지원\) 
+  * 따라서, 비동기 상태에 대한 처리를 하기 위해서는 React의 Suspense를 통해야 함.
+
+```javascript
+import {Suspense} from 'react';
+
+<Suspense fallback={<div>loading...</div>}>    // suspense를 통한 비동기 처리.
+    <RecoilStarCount/>
+</Suspense>
+
+// 비동기 처리 seletor
+export const recoilStarCountState = selector({
+    key: 'asyncState',
+    get: async () => {
+        const response = await fetch('https://api.github.com/repos/Recoil');
+        const recoilProjectInfo = await response.json();
+        
+        return recoilProjectInfo['stargazers_count'];
+    }
+});
+
+
+// RecoilStarCount.js 
+function RecoilStarCount () {
+    const recoilStarCount = useRecoilValue(recoilStarSelector);
+    
+    return (
+        <>
+            <p>recoild gitbub star 갯수</p>
+            <p>{recoilStarCount}</p>
+        </>
+    );
+}
+
+export default RecoilStarCount;
+```
+
+
 
