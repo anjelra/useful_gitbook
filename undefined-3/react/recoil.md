@@ -1,0 +1,51 @@
+---
+description: 상태관리 라이브러리
+---
+
+# recoil
+
+{% embed url="https://blog.woolta.com/categories/1/posts/209" %}
+
+### Atom
+
+* 상태 단위\(redux는 state와 비슷\)
+* 동일한 atom을 사용하는 경우에는 해당 구성 요소가 변경되면 모두 재 렌더링이 됨. 즉, redux를 쓰지 않아도 좀더 편리하게 상태를 관리할 수 있게 됨.
+
+```javascript
+const fontSizeState = atom({
+    key: 'fontSizeState',     // key값(보통 선언한 변수명과 동일하게 셋팅)
+    default: 14    // 초기값
+});
+
+// .js 파일을 하나 만들어서 export 해서 사용하면 좋을듯.
+```
+
+* useRecoilState: 기존 useState와 같이 변경되는 값과 해당 값을 변경하는 함수를 반환.
+* useRecoilValue: 구독하는 값만 반환하는 함수. 값의 update 함수가 필요없는 경우 사용.
+* useSetRecoilState: 구독하는 값을 변경하는 함수만 반환.
+* useResetRecoilState: 값을 기본값으로 reset 시키는 함수.
+
+### Selector
+
+* atom의 상태에 의존하는 동적인 데이터를 생성.
+* get 함수를 통해 atom정보를 하나 이상 가져올 수 있음.
+* set 함수를 통해 한 개 이상의 atom 정보를 업데이트할 수 있음.
+
+```javascript
+export const inputState = atom({
+    key: 'inputState',
+    default: ''
+});
+
+export const countInputState = selector({
+    key: 'countInputState',
+    get: ( { get } ) => {
+        return `현재 카운트는 ${get(countState)} 이고, 입력값은 ${get(inputState)} 입니다.`;
+    },
+    set: ( { set }, newValue ) => {    // 두번째 파라미터는 추가로 받을 인자를 나타냄.
+        set(countState, Number(newValue));    // count atom 수정
+        set(inputState, newValue + 1);        // input atom 수
+    }
+}); 
+```
+
