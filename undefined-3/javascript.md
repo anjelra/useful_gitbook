@@ -4,6 +4,10 @@ description: 봐야할 사이트 정리 및 잊지 말아야 할 것을 정리
 
 # javascript
 
+### javascript 정
+
+### [https://learnjs.vlpt.us/](https://learnjs.vlpt.us/)
+
 ### 정규표현식 
 
 {% embed url="https://hamait.tistory.com/342" %}
@@ -43,6 +47,10 @@ description: 봐야할 사이트 정리 및 잊지 말아야 할 것을 정리
 ### Object를 array로 변환
 
 {% embed url="https://codingcoding.tistory.com/1244" %}
+
+### getter, setter
+
+{% embed url="https://mygumi.tistory.com/161" %}
 
 
 
