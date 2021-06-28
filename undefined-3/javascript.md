@@ -4,7 +4,7 @@ description: 봐야할 사이트 정리 및 잊지 말아야 할 것을 정리
 
 # javascript
 
-### javascript 정
+### javascript 정리  
 
 ### [https://learnjs.vlpt.us/](https://learnjs.vlpt.us/)
 
