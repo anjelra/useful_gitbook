@@ -89,7 +89,9 @@ div + span { color: red; }
 
 * **가상 요소 \(미리 정의해놓은 위치에 삽입이 되도록 약속되어있는 보이지 않는 요소\)**
 
-:before, :after, :first-line, :first-letter
+:before, :after, :first-line, :first-letter 
+
+**input 태그에서는 가상요소\(before, after 등 \)를 사용할 수 없다.**
 
 **여기서 한가지 주의사항!!**   
 before, after 가상 요소는 content: " " 가 있어야 생명력이 있음. 이 content를 없애고자 할 때에는 content: none 을 주면 됨.
