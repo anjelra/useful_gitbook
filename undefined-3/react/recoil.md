@@ -88,5 +88,5 @@ function RecoilStarCount () {
 export default RecoilStarCount;
 ```
 
-
+* selector는 비동기 로직을 한번에  처리할 수 있지만, 주의해야 할 점은 read-only 한 RecoilValueReadOnly 객체로서 return 값만을 가질 수 있고 값을 set할 수 없는 특징을 가지고 있음.
 
