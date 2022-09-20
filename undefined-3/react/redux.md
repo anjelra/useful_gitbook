@@ -2,20 +2,20 @@
 
 ### Presentational 컴포넌트 vs Container 컴포넌트
 
-![](../../.gitbook/assets/a7d079e1-82ee-4b47-8a61-6a2c2c9a51b9.png)
+![](../../.gitbook/assets/A7D079E1-82EE-4B47-8A61-6A2C2C9A51B9.png)
 
 * Presentational 컴포넌트는 단순히 뷰 만들 보여주기 위해 만들어진 컴포넌트
-* Container 컴포넌트는 리덕스와 연동된 컴포넌트 
+* Container 컴포넌트는 리덕스와 연동된 컴포넌트&#x20;
 
 ### Container 컴포넌트
 
 * Container 컴포넌트와 Presentational 컴포넌트의 props에 연결하기 위해서는 connect API가 필요함.
 
-![](../../.gitbook/assets/f2b95a12-3cf0-499d-9fdb-a49230f25084.png)
+![](../../.gitbook/assets/F2B95A12-3CF0-499D-9FDB-A49230F25084.png)
 
 ### redux lifecycle
 
-![](../../.gitbook/assets/030cb405-366c-4a5f-9894-723e3b2ee004.png)
+![](../../.gitbook/assets/030CB405-366C-4A5F-9894-723E3B2EE004.png)
 
 ### state를 통한 data 다루기
 
@@ -31,4 +31,3 @@ const listItems = docsList.map(list => (
     <li key={list._id}>{list.path}</li>
 ));
 ```
-

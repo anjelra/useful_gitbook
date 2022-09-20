@@ -9,15 +9,15 @@
 5. react-app 폴더로 이동(cd react-app)
 6. create-react-app . 입력(react 환경 구축) -> 완료가 되면 해당 폴더에 하단과 같이 나옴.
 
-![](../../.gitbook/assets/578c008d-1d8a-4dff-a0c8-a447db1c286b.png)
+![](../../.gitbook/assets/578C008D-1D8A-4DFF-A0C8-A447DB1C286B.png)
 
 ### create-react-app 실행시키기
 
 1. terminal (cd /Users/song-anjelra/Desktop/react-app 폴더로 이동)에서 npm run start 라고 입력.
 
-![](../../.gitbook/assets/231c7c42-a3d4-4c42-a5d2-529fab49f084.png)
+![](../../.gitbook/assets/231C7C42-A3D4-4C42-A5D2-529FAB49F084.png)
 
-![](../../.gitbook/assets/1a742ee8-20f2-4af0-ae04-3c4243a6241b.png)
+![](../../.gitbook/assets/1A742EE8-20F2-4AF0-AE04-3C4243A6241B.png)
 
 
 
@@ -27,7 +27,7 @@
 2. npm install -g serve (serve라는 명령어를 이용해서 어디서든지 server를 셋팅할 수 있게 설정)
 3. serve -s build (build폴더안에 있는 파일을 document root로 하겠다 라는 뜻(-s))
 
-![](../../.gitbook/assets/c8763e9d-291a-4d1e-828d-81e812bc8bb3.png)
+![](../../.gitbook/assets/C8763E9D-291A-4D1E-828D-81E812BC8BB3.png)
 
 ### react 기본 구조(아무리 복잡해져도 이 부분은 변하지 않는다)
 
@@ -110,7 +110,7 @@ export default App;
 
 ### react component 쪼개기
 
-![](../../.gitbook/assets/9ed40ace-15ed-4ba9-a3cf-462e1146def8.png)
+![](../../.gitbook/assets/9ED40ACE-15ED-4BA9-A3CF-462E1146DEF8.png)
 
 #### App.js 구성
 
@@ -168,7 +168,7 @@ export default TOC;
 
 ### 데이터 전달방식
 
-[![](https://github.com/anjelra/useful\_gitbook/raw/master/.gitbook/assets/image%20\(23\).png)](../../.gitbook/assets/image%20\(23\).png)
+[![](https://github.com/anjelra/useful\_gitbook/raw/master/.gitbook/assets/image%20\(23\).png)](https://github.com/anjelra/useful\_gitbook/blob/master/.gitbook/assets/image%20\(23\).png)
 
 상위 component 가 하위 component 로 데이터를 전달할 때는 props를 이용해서 전달한다.
 

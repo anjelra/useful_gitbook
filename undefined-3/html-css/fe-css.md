@@ -22,9 +22,9 @@ cascading이란 '구체성'을 말한다. 즉, 효과를 적용받는 우선 순
 
 {% embed url="https://justmakeyourself.tistory.com/entry/cascading-using-css" %}
 
-![같은 태그여도 body h1 이 더 구체적으로 선언했기 때문에 green 컬러가 먹을 것임.](<../../.gitbook/assets/image (7).png>)
+![같은 태그여도 body h1 이 더 구체적으로 선언했기 때문에 green 컬러가 먹을 것임.](<../../.gitbook/assets/image (1).png>)
 
-![](../../.gitbook/assets/image.png)
+![](<../../.gitbook/assets/image (37).png>)
 
 #### block-level, inline-level의 차이점
 
@@ -111,7 +111,7 @@ dt: first-child {
 </dl>
 ```
 
-![이런 식으로 내가 원하는 모양이 나옴.](<../../.gitbook/assets/image (3).png>)
+![이런 식으로 내가 원하는 모양이 나옴.](<../../.gitbook/assets/image (52).png>)
 
 ```css
 dd: first-child {
@@ -124,13 +124,13 @@ dd: first-child {
 </dl>
 ```
 
-![이런식으로 정상작동하지 않는다. 그 이유는, 부모인 dl 기준으로 dd가 첫번째 자식이 아니기 때문이다. 내가 헷갈렸던 부분을 해결해줘서 행복.](<../../.gitbook/assets/image (5).png>)
+![이런식으로 정상작동하지 않는다. 그 이유는, 부모인 dl 기준으로 dd가 첫번째 자식이 아니기 때문이다. 내가 헷갈렸던 부분을 해결해줘서 행복.](<../../.gitbook/assets/image (18).png>)
 
 #### margin, padding, background, border는 상속이 되지 않음.(박스 모델 관련 속성들은 상속되지 않는다)
 
-![](<../../.gitbook/assets/image (2).png>)
+![](<../../.gitbook/assets/image (47).png>)
 
-![](<../../.gitbook/assets/image (13).png>)
+![](<../../.gitbook/assets/image (39).png>)
 
 #### color, font-size, line-height는 상속이 됨.&#x20;
 
@@ -156,7 +156,7 @@ dd: first-child {
 * 기본적으로 !important로 선언된 모든 규칙은 그렇지 않은 규칙보다 우선한다.
 * 출처는 제작사, 사용자, 사용자 에이전트(User Agent)로 구분한다.
 
-![](<../../.gitbook/assets/image (11).png>)
+![](<../../.gitbook/assets/image (3).png>)
 
 #### 구체성
 
@@ -248,7 +248,7 @@ p {
 
 #### \*\*헷갈리는 문제
 
-![히히를 가운데로 배치하려면?](<../../.gitbook/assets/image (4).png>)
+![히히를 가운데로 배치하려면?](<../../.gitbook/assets/image (9).png>)
 
 1. inline-block요소를 이용하는 법&#x20;
 
@@ -355,9 +355,9 @@ z-index를 쓰고 싶다면 relative, absolute, fixed 가 되어야 z-index를 �
   * vertical-align 은 주로 한줄짜리 인데 '아이콘, 글, 아이콘' 이런 식으로 정렬을 해야할 때 쓰는게 좋음.
   * 친구가 없으면 vertical-align을 사용할 수 없음. inline-block이여도.&#x20;
 
-![](<../../.gitbook/assets/image (14).png>)
+![](<../../.gitbook/assets/image (20).png>)
 
-![](<../../.gitbook/assets/image (9).png>)
+![](<../../.gitbook/assets/image (31).png>)
 
 * vertical class에 중앙정렬을 하고 싶으면 친구와 부모의 높이가 있어야 함.
 * 또한 body에도 height 100%가 먹여져 있어야 가능함.

@@ -21,6 +21,6 @@
 
 &#x20;  3\. visual code 의 아래 버튼을 클릭.
 
-![](<../../.gitbook/assets/image (58).png>)
+![](<../../.gitbook/assets/image (24).png>)
 
 &#x20; 4\. 원하는 지점에 break-point 를 찍으면 이제 debugging도 가능.
